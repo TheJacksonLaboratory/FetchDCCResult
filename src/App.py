@@ -7,7 +7,7 @@ import Media.media as media
 import logging
 from logging.handlers import RotatingFileHandler
 import datetime
-import mysql
+import mysql.connector
 import experiments_procedure.experiments as specimen
 import line_procedures.lines as line
 import DCC_Files.xml as xml
@@ -34,11 +34,11 @@ logger.addHandler(handler)
 
 def main():
 
-    """Set a higher timeout tolerance
+    """Set a higher timeout tolerance"""
     HTTPConnection.default_socket_options = (HTTPConnection.default_socket_options + [
         (socket.SOL_SOCKET, socket.SO_SNDBUF, 1000000),
         (socket.SOL_SOCKET, socket.SO_RCVBUF, 1000000)
-    ])"""
+    ])
 
     parameterKeys = utils.parameterKeys
     db_server = "rslims.jax.org"
@@ -77,6 +77,8 @@ def main():
         sql = "SELECT OrganismID FROM Organism INNER JOIN OrganismStudy USING (_Organism_key) WHERE _Study_key IN (27, 28, 57);"
         cursor.execute(sql)
         animalIds = cursor.fetchall()
+        conn.close()
+
         for item in animalIds:
             animalId = item[0]
             call_back = specimen.filter_experiment_procedure_by(animalId=animalId, showDetails=True, status="active")
@@ -128,6 +130,7 @@ def main():
         cursor.execute(stmt)
         colonyIds = cursor.fetchall()
         print(colonyIds)
+        conn_to_dev.close()
 
         for pair in colonyIds:
             colonyId = pair[0]
@@ -146,10 +149,20 @@ def main():
                          database=db_name)
 
         logger.info("Done")
-
+        
 
     if sys.argv[1] == "-xml":
-        pass
+        
+        conn = xml.connect_to_db(user=db_user, password=db_password, server=db_server, database=db_name)
+
+        '''GET COLUMN NAMES'''
+        cursor = conn.cursor(buffered=True)
+        cursor.execute("SHOW COLUMNS FROM dccXmlFileStatus;")
+        fileStatusColNames = cursor.fetchall()[1:]
+        db_obj = xml.filter_xml_by(fileName="J.2023-04-14.02.specimen.impc.xml", columns=fileStatusColNames)
+        print(db_obj)
+        xml.insert_to_db(db_object=db_obj, username=db_user, password=db_password, server=db_server, database=db_name)
+        conn.close()
 
 
 # Press the green button in the gutter to run the script.

@@ -5,6 +5,7 @@ from urllib.parse import urlencode, urlunsplit
 import mysql.connector
 import requests
 
+
 logger = logging.getLogger(__name__)
 
 
@@ -21,22 +22,10 @@ def connect_to_db(user: str,
         logger.info(f"Successfully connected to {database}")
         return conn
 
-    except mysql.connector.Error as err1:
+    except mysql.connector.Error as err:
 
-        if err1.errno == errorcode.ER_ACCESS_DENIED_ERROR:
-            logger.error("Wrong user name or password passed")
-
-        elif err1.errno == errorcode.ER_BAD_DB_ERROR:
-            logger.error("No such schema")
-
-        else:
-            error = str(err1.__dict__["orig"])
-            logger.error(error)
-
-    except ConnectionError as err2:
-        logger.error(err2)
-
-    return None
+       logger.error(err)
+       return None
 
 
 def DFS(json_object: dict, columns: list[str], db_obj: dict) -> dict:
