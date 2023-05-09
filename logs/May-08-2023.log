@@ -1,0 +1,19 @@
+[2023-05-08 18:30:46,141->App.py->main():96]INFO: [('_experimentsonlines_key', 'int(11)', 'NO', 'PRI', None, 'auto_increment'), ('procedureId', 'varchar(16)', 'NO', '', None, ''), ('colonyId', 'varchar(16)', 'NO', '', None, ''), ('status', 'varchar(16)', 'YES', '', None, ''), ('createdAt', 'varchar(50)', 'YES', '', None, ''), ('updatedAt', 'varchar(50)', 'YES', '', None, ''), ('message', 'varchar(255)', 'YES', '', None, '')]
+[2023-05-08 18:30:46,143->App.py->main():98]INFO: Remove records from table komp.experimentsonlines
+[2023-05-08 18:30:46,510->App.py->main():106]DEBUG: Adding procedureId
+[2023-05-08 18:30:46,512->App.py->main():106]DEBUG: Adding colonyId
+[2023-05-08 18:30:46,512->App.py->main():106]DEBUG: Adding status
+[2023-05-08 18:30:46,513->App.py->main():106]DEBUG: Adding createdAt
+[2023-05-08 18:30:46,513->App.py->main():106]DEBUG: Adding updatedAt
+[2023-05-08 18:30:46,513->App.py->main():106]DEBUG: Adding message
+[2023-05-08 18:31:35,560->App.py->main():96]INFO: [('_experimentsonlines_key', 'int(11)', 'NO', 'PRI', None, 'auto_increment'), ('procedureId', 'varchar(16)', 'NO', '', None, ''), ('colonyId', 'varchar(16)', 'NO', '', None, ''), ('status', 'varchar(16)', 'YES', '', None, ''), ('createdAt', 'varchar(50)', 'YES', '', None, ''), ('updatedAt', 'varchar(50)', 'YES', '', None, ''), ('message', 'varchar(255)', 'YES', '', None, '')]
+[2023-05-08 18:31:35,562->App.py->main():98]INFO: Remove records from table komp.experimentsonlines
+[2023-05-08 18:31:35,905->App.py->main():106]DEBUG: Adding procedureId
+[2023-05-08 18:31:35,906->App.py->main():106]DEBUG: Adding colonyId
+[2023-05-08 18:31:35,907->App.py->main():106]DEBUG: Adding status
+[2023-05-08 18:31:35,907->App.py->main():106]DEBUG: Adding createdAt
+[2023-05-08 18:31:35,907->App.py->main():106]DEBUG: Adding updatedAt
+[2023-05-08 18:31:35,909->App.py->main():106]DEBUG: Adding message
+[2023-05-08 18:31:39,290->App.py->main():140]INFO: Inserting . . .
+[2023-05-08 18:31:48,062->App.py->main():140]INFO: Inserting . . .
+[2023-05-08 18:31:56,897->App.py->main():140]INFO: Inserting . . .
