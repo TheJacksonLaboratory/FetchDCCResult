@@ -34,12 +34,6 @@ logger.addHandler(handler)
 
 def main():
 
-    """Set a higher timeout tolerance"""
-    HTTPConnection.default_socket_options = (HTTPConnection.default_socket_options + [
-        (socket.SOL_SOCKET, socket.SO_SNDBUF, 1000000),
-        (socket.SOL_SOCKET, socket.SO_RCVBUF, 1000000)
-    ])
-
     parameterKeys = utils.parameterKeys
     db_server = "rslims.jax.org"
     db_user = "dba"
@@ -154,14 +148,26 @@ def main():
     if sys.argv[1] == "-xml":
         
         conn = xml.connect_to_db(user=db_user, password=db_password, server=db_server, database=db_name)
+        cursor = conn.cursor(buffered=True, dictionary=True)
+        cursor.execute("SELECT DISTINCT * FROM KOMP.submittedprocedures;")
+        rows = cursor.fetchall()
 
         '''GET COLUMN NAMES'''
-        cursor = conn.cursor(buffered=True)
-        cursor.execute("SHOW COLUMNS FROM dccXmlFileStatus;")
-        fileStatusColNames = cursor.fetchall()[1:]
-        db_obj = xml.filter_xml_by(fileName="J.2023-04-14.02.specimen.impc.xml", columns=fileStatusColNames)
-        print(db_obj)
-        xml.insert_to_db(db_object=db_obj, username=db_user, password=db_password, server=db_server, database=db_name)
+        
+        cursor.execute("SELECT * FROM dccXmlFileStatus;")
+        fileStatusColNames = list(cursor.fetchall()[0].keys())[1:]
+        
+        cursor.execute("TRUNCATE TABLE dccXmlFileStatus;")
+
+        #db_obj = xml.filter_xml_by(fileName="J.2023-03-02.50.experiment.impc.xml", columns=fileStatusColNames)
+        #print(db_obj)
+        
+        for row in rows:
+            xmlFileName = row["XmlFilename"]
+            db_obj = xml.filter_xml_by(fileName=xmlFileName, columns=fileStatusColNames)
+            print(db_obj)
+            xml.insert_to_db(db_object=db_obj, username=db_user, password=db_password, server=db_server, database=db_name)
+        
         conn.close()
 
 

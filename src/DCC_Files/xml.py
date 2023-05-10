@@ -1,4 +1,7 @@
 import logging
+logger = logging.getLogger(__name__)
+
+
 from logging.handlers import RotatingFileHandler
 import os
 from datetime import datetime
@@ -10,7 +13,7 @@ from typing import Optional
 import sqlalchemy as db
 from collections import ChainMap
 
-logger = logging.getLogger(__name__)
+
 
 def connect_to_db(user: str,
                   password: str,
@@ -60,6 +63,8 @@ def filter_xml_by(fileName: str,
                     logger.debug(f"Adding {key} to database record")
                     db_obj[key] = val
                 db_obj["logs"] = json_obj["logs"]
+                db_obj["lastUpdatedDate"] = json_obj["lastUpatedDate"]
+                db_obj["xmlId"] = json_obj["filename"].split(".")[2]
 
         return db_obj
     
@@ -88,6 +93,7 @@ def insert_to_db(db_object: dict,
         logger.error("No data associated with the given xml file")
         return
     
+    print(db_object)
     conn = mysql.connector.connect(host=server, user=username, password=password, database=database)
     row = {}
 
@@ -138,13 +144,19 @@ def insert_to_db(db_object: dict,
             logger.info("Done")
 
         else:
+            logger.debug(f"Assigning {val} to key {key}")
             row[key] = val
 
+    
     logger.info("Start to insert to file status table")   
     cursor = conn.cursor()
+    print(row)
     placeholders = ', '.join(['%s'] * len(row))
-    columns = ', '.join(record.keys())
+    columns = ', '.join(row.keys())
     stmt = "INSERT INTO %s ( %s ) VALUES ( %s );" % ("KOMP.dccXmlFileStatus", columns, placeholders)
+    logger.debug(stmt)
+    cursor.execute(stmt, list(row.values()))
+
     logger.debug(stmt)
 
     logger.info("Done")
