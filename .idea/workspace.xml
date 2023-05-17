@@ -4,7 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b0f97f76-ce2a-4d7f-b9f6-81c0f9aaa130" name="Changes" comment="" />
+    <list default="true" id="b0f97f76-ce2a-4d7f-b9f6-81c0f9aaa130" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/ebi_images/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ebi_images/media.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ebi_procedure/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ebi_procedure/procedure.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/FetchDCCResult.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FetchDCCResult.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job.sh" beforeDir="false" afterPath="$PROJECT_DIR$/job.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DCC_Files/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/DCC_Files/zip_files.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DCC_Files/xml.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/DCC_Files/xml_files.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DCC_Files/zip.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dcc_images/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Fetch.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Media/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dcc_files/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Media/media.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dcc_images/media.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +36,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -25,12 +47,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "settings.editor.selected.configurable": "copyright"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
@@ -44,8 +67,8 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="/usr/local/bin/python3.11" />
-      <option name="SDK_NAME" value="Python 3.11" />
+      <option name="SDK_HOME" value="$USER_HOME$/FetchDCCResult/bin/python" />
+      <option name="SDK_NAME" value="Python 3.11 (FetchDCCResult)" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -80,21 +103,5 @@
       <updated>1683590442024</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/Fetch.py</url>
-          <line>13</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/Media/media.py</url>
-          <line>20</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

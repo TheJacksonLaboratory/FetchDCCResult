@@ -13,5 +13,10 @@ sleep 5m
 echo "Populating images table"
 python src/App.py -i
 
+sleep 5m
+
+echo "Populating xml table"
+python src/App.py -xml
+
 echo "All jobs are done"
  
