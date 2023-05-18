@@ -1,0 +1,9 @@
+[2023-05-18 16:11:32,563->App.py->main():87]INFO: [('_experimentsonlines_key', 'int(11)', 'NO', 'PRI', None, 'auto_increment'), ('procedureId', 'varchar(16)', 'NO', '', None, ''), ('colonyId', 'varchar(16)', 'NO', '', None, ''), ('status', 'varchar(16)', 'YES', '', None, ''), ('createdAt', 'varchar(50)', 'YES', '', None, ''), ('updatedAt', 'varchar(50)', 'YES', '', None, ''), ('message', 'varchar(255)', 'YES', '', None, '')]
+[2023-05-18 16:11:32,565->App.py->main():89]INFO: Remove records from table komp.experimentsonlines
+[2023-05-18 16:11:32,991->App.py->main():97]DEBUG: Adding procedureId
+[2023-05-18 16:11:32,992->App.py->main():97]DEBUG: Adding colonyId
+[2023-05-18 16:11:32,992->App.py->main():97]DEBUG: Adding status
+[2023-05-18 16:11:32,993->App.py->main():97]DEBUG: Adding createdAt
+[2023-05-18 16:11:32,993->App.py->main():97]DEBUG: Adding updatedAt
+[2023-05-18 16:11:32,996->App.py->main():97]DEBUG: Adding message
+[2023-05-18 16:11:34,399->App.py->main():130]INFO: Done

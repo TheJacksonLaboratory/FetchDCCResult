@@ -1,16 +1,13 @@
 import sys
-from http.client import HTTPConnection
-from socket import socket
 import utils
 import os
-import dcc_images.media as media
+import IMPC.dcc_images as media
 import logging
 from logging.handlers import RotatingFileHandler
 import datetime
 import mysql.connector
-import experiments_procedure.experiments as specimen
-import line_procedures.lines as line
-import dcc_files.xml_files as xml
+import IMPC.dcc_procedures as procedures
+import IMPC.dcc_files as dcc_files
 
 """Setup logger"""
 
@@ -64,7 +61,7 @@ def main():
         conn.commit()
         conn.close()
 
-        conn = specimen.connect_to_db(user=db_user, password=db_password, server=db_server, database="rslims")
+        conn = procedures.connect_to_db(user=db_user, password=db_password, server=db_server, database="rslims")
         cursor = conn.cursor()
         sql = "SELECT OrganismID FROM Organism INNER JOIN OrganismStudy USING (_Organism_key) WHERE _Study_key IN (" \
               "27, 28, 57);"
@@ -72,18 +69,19 @@ def main():
         animalIds = cursor.fetchall()
         conn.close()
 
+
         for item in animalIds:
             animalId = item[0]
-            call_back = specimen.filter_experiment_procedure_by(animalId=animalId, showDetails=True, status="active")
-            specimen.insert_to_db(dataset=call_back, insert_type="specimen",
-                                  username=db_user,
-                                  password=db_password,
-                                  server=db_server,
-                                  database=db_name)
+            call_back = procedures.filter_experiment_procedure_by(animalId=animalId, showDetails=True, status="active")
+            procedures.insert_to_db(dataset=call_back, insert_type="specimen",
+                                    username=db_user,
+                                    password=db_password,
+                                    server=db_server,
+                                    database=db_name)
 
     if sys.argv[1] == "-l":
 
-        conn_to_prod = line.connect_to_db(user=db_user, password=db_password, server=db_server, database="komp")
+        conn_to_prod = procedures.connect_to_db(user=db_user, password=db_password, server=db_server, database="komp")
         cursor = conn_to_prod.cursor()
         cursor.execute("SHOW COLUMNS FROM experimentsonlines;")
         queryResult = cursor.fetchall()
@@ -113,27 +111,28 @@ def main():
         print(colonyIds)
         conn_to_dev.close()
 
+
         for pair in colonyIds:
             colonyId = pair[0]
-            result = line.filter_line_procedure_by(columns=cols,
-                                                   centre="J",
-                                                   colonyId=colonyId,
-                                                   showdetails=True,
-                                                   start=0,
-                                                   resultsize=2 ** 31 - 1)
+            result = procedures.filter_line_procedure_by(columns=cols,
+                                                         centre="J",
+                                                         colonyId=colonyId,
+                                                         showdetails=True,
+                                                         start=0,
+                                                         resultsize=2 ** 31 - 1)
             logger.info("Inserting . . .")
-            line.insert_to_db(dataset=result,
-                              insert_type="line",
-                              username=db_user,
-                              password=db_password,
-                              server=db_server,
-                              database=db_name)
+            procedures.insert_to_db(dataset=result,
+                                    insert_type="line",
+                                    username=db_user,
+                                    password=db_password,
+                                    server=db_server,
+                                    database=db_name)
 
         logger.info("Done")
 
     if sys.argv[1] == "-xml":
 
-        conn = xml.connect_to_db(user=db_user, password=db_password, server=db_server, database=db_name)
+        conn = dcc_files.connect_to_db(user=db_user, password=db_password, server=db_server, database=db_name)
         cursor = conn.cursor(buffered=True, dictionary=True)
         cursor.execute("SELECT DISTINCT * FROM KOMP.submittedprocedures;")
         rows = cursor.fetchall()
@@ -150,10 +149,10 @@ def main():
 
         for row in rows:
             xmlFileName = row["XmlFilename"]
-            db_obj = xml.filter_xml_by(fileName=xmlFileName, columns=fileStatusColNames)
+            db_obj = dcc_files.filter_xml_by(fileName=xmlFileName, columns=fileStatusColNames)
             print(db_obj)
-            xml.insert_to_db(db_object=db_obj, username=db_user, password=db_password, server=db_server,
-                             database=db_name)
+            dcc_files.insert_to_db(db_object=db_obj, username=db_user, password=db_password, server=db_server,
+                                   database=db_name)
 
         conn.close()
 
