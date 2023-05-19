@@ -1,6 +1,7 @@
 import logging
 from datetime import datetime
 from typing import Optional
+import urllib
 from urllib.parse import urlencode, urlunsplit
 import mysql.connector
 import requests

@@ -69,7 +69,6 @@ def main():
         animalIds = cursor.fetchall()
         conn.close()
 
-
         for item in animalIds:
             animalId = item[0]
             call_back = procedures.filter_experiment_procedure_by(animalId=animalId, showDetails=True, status="active")
@@ -110,7 +109,6 @@ def main():
         colonyIds = cursor.fetchall()
         print(colonyIds)
         conn_to_dev.close()
-
 
         for pair in colonyIds:
             colonyId = pair[0]
