@@ -265,7 +265,7 @@ def insert_to_db(dataset: list[dict],
         error = str(err.__dict__["orig"])
         logger.error("Error message: {error}".format(error=error))
 
-
+'''
 db_server = "rslims.jax.org"
 db_user = "dba"
 db_password = "rsdba"
@@ -273,3 +273,4 @@ db_name = "komp"
 parameterCode = "IMPC_EYE_050_001"
 call_back = filter_image_by(parameterKey=parameterCode, start=0, resultsize=2 ** 31 - 1)
 insert_to_db(dataset=call_back, username=db_user, password=db_password, server=db_server, database=db_name)
+'''

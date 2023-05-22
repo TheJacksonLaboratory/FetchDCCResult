@@ -15,11 +15,6 @@ import src.EBI.ebi_procedure as ebi_procedure
 """Setup logger"""
 
 logging_dest = os.path.join(os.getcwd(), "logs")
-try:
-    os.mkdir(logging_dest)
-
-except OSError as e:
-    print(e)
 
 logger = logging.getLogger(__name__)
 FORMAT = "[%(asctime)s->%(filename)s->%(funcName)s():%(lineno)s]%(levelname)s: %(message)s"
