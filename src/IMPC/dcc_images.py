@@ -203,7 +203,6 @@ def filter_image_by(parameterKey: Optional[str] = None,
 
 
 def insert_to_db(dataset: list[dict],
-                 insert_type: str,
                  username: str,
                  password: str,
                  server: str,
@@ -229,45 +228,48 @@ def insert_to_db(dataset: list[dict],
         logger.warning("No record retrieved!")
         return
 
-    if insert_type == "images":
-
         # Concat datatset into a pandas dataframe
-        temp = []
-        for data in dataset:
-            data = pd.Series(data).to_frame()
-            data = data.transpose()
-            temp.append(data)
+    temp = []
+    for data in dataset:
+        data = pd.Series(data).to_frame()
+        data = data.transpose()
+        temp.append(data)
 
-        df = pd.concat(temp)
+    df = pd.concat(temp)
 
-        df.drop("procedureKey", axis=1, inplace=True)
-        currTime = [datetime.now() for i in range(len(df.index))]
-        insertData = df.copy()
-        insertData["modifiedTime"] = pd.Series(currTime).values
+    df.drop("procedureKey", axis=1, inplace=True)
+    currTime = [datetime.now() for i in range(len(df.index))]
+    insertData = df.copy()
+    insertData["modifiedTime"] = pd.Series(currTime).values
 
-        try:
-            engine = create_engine("mysql+mysqlconnector://{0}:{1}@{2}/{3}".
-                                   format(username, password, server, database),
-                                   pool_recycle=3600,
-                                   pool_timeout=57600,
-                                   future=True)
+    try:
+        engine = create_engine("mysql+mysqlconnector://{0}:{1}@{2}/{3}".
+                               format(username, password, server, database),
+                               pool_recycle=3600,
+                               pool_timeout=57600,
+                               future=True)
 
-            with engine.connect() as conn:
-                logger.debug("Getting the column names")
-                keys = conn.execute(db.text("SELECT * FROM komp.dccImages;")).keys()
-            insertData.columns = keys
-            print(insertData)
+        with engine.connect() as conn:
+            logger.debug("Getting the column names")
+            keys = conn.execute(db.text("SELECT * FROM komp.dccimages;")).keys()
+        insertData.columns = keys
+        print(insertData)
 
-            insertData.to_sql("komp.dccImages", engine, if_exists='append', index=False, chunksize=1000)
-            insertionResult = engine.connect().execute(db.text(f"SELECT * FROM komp.dccImages;"))
-            logger.debug(f"Insertion result is:{insertionResult}")
-            result = engine.connect().execute(db.text(f"SELECT COUNT(*) FROM komp.dccImages;"))
-            print(result.first()[0])
+        insertData.to_sql("dccimages", engine, schema="komp", if_exists='append', index=False, chunksize=1000)
+        insertionResult = engine.connect().execute(db.text(f"SELECT * FROM komp.dccImages;"))
+        logger.debug(f"Insertion result is:{insertionResult}")
+        result = engine.connect().execute(db.text(f"SELECT COUNT(*) FROM komp.dccImages;"))
+        print(result.first()[0])
 
-        except SQLAlchemyError as err:
-            error = str(err.__dict__["orig"])
-            logger.error("Error message: {error}".format(error=error))
+    except SQLAlchemyError as err:
+        error = str(err.__dict__["orig"])
+        logger.error("Error message: {error}".format(error=error))
 
-    else:
-        logger.error("Invalid inserting type")
-        return
+
+db_server = "rslims.jax.org"
+db_user = "dba"
+db_password = "rsdba"
+db_name = "komp"
+parameterCode = "IMPC_EYE_050_001"
+call_back = filter_image_by(parameterKey=parameterCode, start=0, resultsize=2 ** 31 - 1)
+insert_to_db(dataset=call_back, username=db_user, password=db_password, server=db_server, database=db_name)
