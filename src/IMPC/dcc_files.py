@@ -2,7 +2,7 @@ import logging
 import mysql.connector
 import requests
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger("__main__")
 
 
 def connect_to_db(user: str,
@@ -140,6 +140,5 @@ def insert_to_db(db_object: dict,
     logger.debug(stmt)
     cursor.execute(stmt, list(row.values()))
 
-    logger.debug(stmt)
-
-    logger.info("Done")
+    conn.close()
+    logger.info("All insertions has been done, db connection closed.")

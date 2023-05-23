@@ -1,14 +1,14 @@
+import datetime
+import logging
 import urllib
+from datetime import datetime
 from typing import Optional
 from urllib.parse import urlencode, urlunsplit
-import requests
-import logging
-import mysql.connector
-from DateTime import DateTime
-import datetime
-from datetime import datetime
 
-logger = logging.getLogger(__name__)
+import mysql.connector
+import requests
+
+logger = logging.getLogger("__main__")
 
 nameMap = {"gene_symbol": "GeneSymbol", "date_of_experiment": "date_of_experiment",
            "experiment_source_id": "experiment_name", "external_sample_id": "organism_name",
@@ -40,6 +40,9 @@ def connect_to_db(user: str,
 
 def BFS(graph: list[dict],
         result: list) -> None:
+    """
+
+    """
     if not graph:
         logger.error("Empty Json Object!")
         return
@@ -81,7 +84,6 @@ def filer_procedure_by(columns: list[str],
         logger.error("Invalid start or result size")
         return []
 
-    # base_url = "https://www.ebi.ac.uk/mi/impc/solr/experiment/select?q={}&fl={}"
     dict_ = {}
 
     if gene_symbol:
@@ -181,6 +183,8 @@ def insert_to_db(dataset: list[dict],
     cursor = conn.cursor()
 
     for data in dataset:
+        logger.info("Inserting . . . ")
+
         def strip_datetime(datetime_str) -> None:
             logger.info("datetime string : {}".format(datetime_str))
             datetime_obj = datetime.strptime(datetime_str,
@@ -193,16 +197,15 @@ def insert_to_db(dataset: list[dict],
             data["date_of_experiment"] = date
 
         strip_datetime(data["date_of_experiment"])
-        print(data)
         placeholders = ', '.join(['%s'] * len(data))
         cols = ', '.join(data.keys())
-        logger.info(f"Adding record for {data['experiment_name']}")
+        logger.info(f"Inserting record for {data['experiment_name']}")
         stmt = "INSERT INTO %s ( %s ) VALUES ( %s );" % ("KOMP.ebi_procedures", cols, placeholders)
         cursor.execute(stmt, list(data.values()))
         conn.commit()
 
-    logger.debug("Done")
     conn.close()
+    logger.info("All insertions has been done, db connection closed.")
 
 
 '''

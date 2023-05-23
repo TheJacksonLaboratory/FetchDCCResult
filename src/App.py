@@ -9,8 +9,8 @@ import mysql.connector
 import IMPC.dcc_procedures as procedures
 import IMPC.dcc_files as dcc_files
 import IMPC.dcc_images as media
-import src.EBI.ebi_images as ebi_media
-import src.EBI.ebi_procedure as ebi_procedure
+import EBI.ebi_images as ebi_media
+import EBI.ebi_procedure as ebi_procedure
 
 """Setup logger"""
 
@@ -55,7 +55,7 @@ def main():
                                    database=db_name)
                 logger.info("Process finished")
 
-            logger.info("Process finished")
+            logger.info("Done")
             print("\n-----------------------------------------------------")
             print("Process finished")
 
@@ -86,7 +86,7 @@ def main():
                                         server=db_server,
                                         database=db_name)
 
-            logger.info("Process finished")
+            logger.info("Done")
             print("\n-----------------------------------------------------")
             print("Process finished")
 
@@ -120,7 +120,7 @@ def main():
             cursor = conn_to_dev.cursor()
             cursor.execute(stmt)
             colonyIds = cursor.fetchall()
-            print(colonyIds)
+            #print(colonyIds)
             conn_to_dev.close()
 
             for pair in colonyIds:
@@ -139,7 +139,7 @@ def main():
                                         server=db_server,
                                         database=db_name)
 
-            logger.info("Process finished")
+            logger.info("Done")
             print("\n-----------------------------------------------------")
             print("Process finished")
 
@@ -167,7 +167,7 @@ def main():
                 dcc_files.insert_to_db(db_object=db_obj, username=db_user, password=db_password, server=db_server,
                                        database=db_name)
 
-            logger.info("Process finished")
+            logger.info("Done")
             print("\n-----------------------------------------------------")
             print("Process finished")
             conn.close()
@@ -217,9 +217,13 @@ def main():
                                                server=db_server,
                                                database=db_name)
 
-            logger.info("Process finished")
+            logger.info("Done")
+            print("\n")
             print("\n-----------------------------------------------------")
             print("Process finished")
+
+        if sys.argv[2] == "-i":
+            pass
 
 
 # Press the green button in the gutter to run the script.

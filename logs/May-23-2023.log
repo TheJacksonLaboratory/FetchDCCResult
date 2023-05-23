@@ -1,0 +1,154 @@
+[2023-05-23 10:21:00,313->dcc_images.py->connect_to_db():29]INFO: Successfully connected to rslims
+[2023-05-23 10:21:00,865->App.py->main():48]INFO: Getting result from IMPC
+[2023-05-23 10:21:08,162->App.py->main():50]INFO: Inserting . . . 
+[2023-05-23 10:21:12,119->dcc_images.py->insert_to_db():251]DEBUG: Getting the column names
+[2023-05-23 10:21:21,397->dcc_images.py->insert_to_db():258]DEBUG: Insertion result is:<sqlalchemy.engine.cursor.CursorResult object at 0x7f9e8846d0a0>
+[2023-05-23 10:21:22,110->App.py->main():56]INFO: Process finished
+[2023-05-23 10:21:22,110->App.py->main():48]INFO: Getting result from IMPC
+[2023-05-23 10:21:23,893->App.py->main():50]INFO: Inserting . . . 
+[2023-05-23 10:21:26,584->dcc_images.py->insert_to_db():251]DEBUG: Getting the column names
+[2023-05-23 10:21:32,854->dcc_images.py->insert_to_db():258]DEBUG: Insertion result is:<sqlalchemy.engine.cursor.CursorResult object at 0x7f9eaaaa9700>
+[2023-05-23 10:21:33,557->App.py->main():56]INFO: Process finished
+[2023-05-23 10:21:33,557->App.py->main():48]INFO: Getting result from IMPC
+[2023-05-23 10:21:41,289->App.py->main():50]INFO: Inserting . . . 
+[2023-05-23 10:21:45,267->dcc_images.py->insert_to_db():251]DEBUG: Getting the column names
+[2023-05-23 10:21:55,948->dcc_images.py->insert_to_db():258]DEBUG: Insertion result is:<sqlalchemy.engine.cursor.CursorResult object at 0x7f9e70517a60>
+[2023-05-23 10:21:56,650->App.py->main():56]INFO: Process finished
+[2023-05-23 10:21:56,650->App.py->main():48]INFO: Getting result from IMPC
+[2023-05-23 10:22:04,060->App.py->main():50]INFO: Inserting . . . 
+[2023-05-23 10:22:08,103->dcc_images.py->insert_to_db():251]DEBUG: Getting the column names
+[2023-05-23 10:22:18,274->dcc_images.py->insert_to_db():258]DEBUG: Insertion result is:<sqlalchemy.engine.cursor.CursorResult object at 0x7f9e986a7b80>
+[2023-05-23 10:22:19,084->App.py->main():56]INFO: Process finished
+[2023-05-23 10:22:19,084->App.py->main():48]INFO: Getting result from IMPC
+[2023-05-23 10:22:27,007->App.py->main():50]INFO: Inserting . . . 
+[2023-05-23 10:22:30,954->dcc_images.py->insert_to_db():251]DEBUG: Getting the column names
+[2023-05-23 10:22:40,764->dcc_images.py->insert_to_db():258]DEBUG: Insertion result is:<sqlalchemy.engine.cursor.CursorResult object at 0x7f9e7839dbe0>
+[2023-05-23 10:22:41,499->App.py->main():56]INFO: Process finished
+[2023-05-23 10:22:41,499->App.py->main():48]INFO: Getting result from IMPC
+[2023-05-23 10:22:48,943->App.py->main():50]INFO: Inserting . . . 
+[2023-05-23 10:22:52,856->dcc_images.py->insert_to_db():251]DEBUG: Getting the column names
+[2023-05-23 10:23:03,924->dcc_images.py->insert_to_db():258]DEBUG: Insertion result is:<sqlalchemy.engine.cursor.CursorResult object at 0x7f9eaab2fca0>
+[2023-05-23 10:23:04,643->App.py->main():56]INFO: Process finished
+[2023-05-23 10:23:04,643->App.py->main():48]INFO: Getting result from IMPC
+[2023-05-23 10:23:06,172->App.py->main():50]INFO: Inserting . . . 
+[2023-05-23 10:23:08,429->dcc_images.py->insert_to_db():251]DEBUG: Getting the column names
+[2023-05-23 10:23:14,462->dcc_images.py->insert_to_db():258]DEBUG: Insertion result is:<sqlalchemy.engine.cursor.CursorResult object at 0x7f9e9035afa0>
+[2023-05-23 10:23:15,165->App.py->main():56]INFO: Process finished
+[2023-05-23 10:23:15,165->App.py->main():48]INFO: Getting result from IMPC
+[2023-05-23 10:23:18,166->App.py->main():50]INFO: Inserting . . . 
+[2023-05-23 10:23:22,289->dcc_images.py->insert_to_db():251]DEBUG: Getting the column names
+[2023-05-23 10:23:32,899->dcc_images.py->insert_to_db():258]DEBUG: Insertion result is:<sqlalchemy.engine.cursor.CursorResult object at 0x7f9eacbb71c0>
+[2023-05-23 10:23:33,630->App.py->main():56]INFO: Process finished
+[2023-05-23 10:23:33,630->App.py->main():48]INFO: Getting result from IMPC
+[2023-05-23 10:23:35,136->App.py->main():50]INFO: Inserting . . . 
+[2023-05-23 10:23:37,336->dcc_images.py->insert_to_db():251]DEBUG: Getting the column names
+[2023-05-23 10:23:44,395->dcc_images.py->insert_to_db():258]DEBUG: Insertion result is:<sqlalchemy.engine.cursor.CursorResult object at 0x7f9e91c9f220>
+[2023-05-23 10:23:45,123->App.py->main():56]INFO: Process finished
+[2023-05-23 10:23:45,124->App.py->main():48]INFO: Getting result from IMPC
+[2023-05-23 10:23:47,639->App.py->main():50]INFO: Inserting . . . 
+[2023-05-23 10:23:51,181->dcc_images.py->insert_to_db():251]DEBUG: Getting the column names
+[2023-05-23 10:24:01,403->dcc_images.py->insert_to_db():258]DEBUG: Insertion result is:<sqlalchemy.engine.cursor.CursorResult object at 0x7f9eac810e20>
+[2023-05-23 10:24:02,144->App.py->main():56]INFO: Process finished
+[2023-05-23 10:24:02,145->App.py->main():48]INFO: Getting result from IMPC
+[2023-05-23 10:24:09,900->App.py->main():50]INFO: Inserting . . . 
+[2023-05-23 10:24:13,819->dcc_images.py->insert_to_db():251]DEBUG: Getting the column names
+[2023-05-23 10:24:25,119->dcc_images.py->insert_to_db():258]DEBUG: Insertion result is:<sqlalchemy.engine.cursor.CursorResult object at 0x7f9e92370ca0>
+[2023-05-23 10:24:25,863->App.py->main():56]INFO: Process finished
+[2023-05-23 10:24:25,863->App.py->main():48]INFO: Getting result from IMPC
+[2023-05-23 10:24:26,549->App.py->main():50]INFO: Inserting . . . 
+[2023-05-23 10:24:26,549->dcc_images.py->insert_to_db():226]WARNING: No record retrieved!
+[2023-05-23 10:24:26,550->App.py->main():56]INFO: Process finished
+[2023-05-23 10:24:26,550->App.py->main():48]INFO: Getting result from IMPC
+[2023-05-23 10:24:28,815->App.py->main():50]INFO: Inserting . . . 
+[2023-05-23 10:24:31,751->dcc_images.py->insert_to_db():251]DEBUG: Getting the column names
+[2023-05-23 10:24:41,129->dcc_images.py->insert_to_db():258]DEBUG: Insertion result is:<sqlalchemy.engine.cursor.CursorResult object at 0x7f9eacfee880>
+[2023-05-23 10:24:41,881->App.py->main():56]INFO: Process finished
+[2023-05-23 10:24:41,882->App.py->main():48]INFO: Getting result from IMPC
+[2023-05-23 10:24:42,544->App.py->main():50]INFO: Inserting . . . 
+[2023-05-23 10:24:42,544->dcc_images.py->insert_to_db():226]WARNING: No record retrieved!
+[2023-05-23 10:24:42,544->App.py->main():56]INFO: Process finished
+[2023-05-23 10:24:42,545->App.py->main():48]INFO: Getting result from IMPC
+[2023-05-23 10:24:43,201->App.py->main():50]INFO: Inserting . . . 
+[2023-05-23 10:24:44,973->dcc_images.py->insert_to_db():251]DEBUG: Getting the column names
+[2023-05-23 10:24:50,852->dcc_images.py->insert_to_db():258]DEBUG: Insertion result is:<sqlalchemy.engine.cursor.CursorResult object at 0x7f9e582d4940>
+[2023-05-23 10:24:51,593->App.py->main():56]INFO: Process finished
+[2023-05-23 10:24:51,593->App.py->main():48]INFO: Getting result from IMPC
+[2023-05-23 10:24:52,227->App.py->main():50]INFO: Inserting . . . 
+[2023-05-23 10:24:52,228->dcc_images.py->insert_to_db():226]WARNING: No record retrieved!
+[2023-05-23 10:24:52,228->App.py->main():56]INFO: Process finished
+[2023-05-23 10:24:52,228->App.py->main():48]INFO: Getting result from IMPC
+[2023-05-23 10:24:53,180->App.py->main():50]INFO: Inserting . . . 
+[2023-05-23 10:24:55,212->dcc_images.py->insert_to_db():251]DEBUG: Getting the column names
+[2023-05-23 10:25:00,910->dcc_images.py->insert_to_db():258]DEBUG: Insertion result is:<sqlalchemy.engine.cursor.CursorResult object at 0x7f9eab7a9400>
+[2023-05-23 10:25:01,655->App.py->main():56]INFO: Process finished
+[2023-05-23 10:25:01,655->App.py->main():48]INFO: Getting result from IMPC
+[2023-05-23 10:25:02,291->App.py->main():50]INFO: Inserting . . . 
+[2023-05-23 10:25:02,292->dcc_images.py->insert_to_db():226]WARNING: No record retrieved!
+[2023-05-23 10:25:02,292->App.py->main():56]INFO: Process finished
+[2023-05-23 10:25:02,292->App.py->main():48]INFO: Getting result from IMPC
+[2023-05-23 10:25:03,222->App.py->main():50]INFO: Inserting . . . 
+[2023-05-23 10:25:05,164->dcc_images.py->insert_to_db():251]DEBUG: Getting the column names
+[2023-05-23 10:25:11,503->dcc_images.py->insert_to_db():258]DEBUG: Insertion result is:<sqlalchemy.engine.cursor.CursorResult object at 0x7f9e9030b2e0>
+[2023-05-23 10:25:12,243->App.py->main():56]INFO: Process finished
+[2023-05-23 10:25:12,243->App.py->main():48]INFO: Getting result from IMPC
+[2023-05-23 10:25:13,033->App.py->main():50]INFO: Inserting . . . 
+[2023-05-23 10:25:14,936->dcc_images.py->insert_to_db():251]DEBUG: Getting the column names
+[2023-05-23 10:25:20,726->dcc_images.py->insert_to_db():258]DEBUG: Insertion result is:<sqlalchemy.engine.cursor.CursorResult object at 0x7f9e91b800a0>
+[2023-05-23 10:25:21,464->App.py->main():56]INFO: Process finished
+[2023-05-23 10:25:21,464->App.py->main():48]INFO: Getting result from IMPC
+[2023-05-23 10:25:22,493->App.py->main():50]INFO: Inserting . . . 
+[2023-05-23 10:25:24,446->dcc_images.py->insert_to_db():251]DEBUG: Getting the column names
+[2023-05-23 10:25:30,887->dcc_images.py->insert_to_db():258]DEBUG: Insertion result is:<sqlalchemy.engine.cursor.CursorResult object at 0x7f9e911575e0>
+[2023-05-23 10:25:31,625->App.py->main():56]INFO: Process finished
+[2023-05-23 10:25:31,625->App.py->main():48]INFO: Getting result from IMPC
+[2023-05-23 10:25:32,565->App.py->main():50]INFO: Inserting . . . 
+[2023-05-23 10:25:34,513->dcc_images.py->insert_to_db():251]DEBUG: Getting the column names
+[2023-05-23 10:25:40,438->dcc_images.py->insert_to_db():258]DEBUG: Insertion result is:<sqlalchemy.engine.cursor.CursorResult object at 0x7f9e915df2e0>
+[2023-05-23 10:25:41,175->App.py->main():56]INFO: Process finished
+[2023-05-23 10:25:41,175->App.py->main():48]INFO: Getting result from IMPC
+[2023-05-23 10:25:42,525->App.py->main():50]INFO: Inserting . . . 
+[2023-05-23 10:25:44,520->dcc_images.py->insert_to_db():251]DEBUG: Getting the column names
+[2023-05-23 10:25:51,283->dcc_images.py->insert_to_db():258]DEBUG: Insertion result is:<sqlalchemy.engine.cursor.CursorResult object at 0x7f9e914e0d60>
+[2023-05-23 10:25:52,027->App.py->main():56]INFO: Process finished
+[2023-05-23 10:25:52,027->App.py->main():48]INFO: Getting result from IMPC
+[2023-05-23 10:25:52,668->App.py->main():50]INFO: Inserting . . . 
+[2023-05-23 10:25:52,668->dcc_images.py->insert_to_db():226]WARNING: No record retrieved!
+[2023-05-23 10:25:52,668->App.py->main():56]INFO: Process finished
+[2023-05-23 10:25:52,668->App.py->main():48]INFO: Getting result from IMPC
+[2023-05-23 10:25:53,313->App.py->main():50]INFO: Inserting . . . 
+[2023-05-23 10:25:55,099->dcc_images.py->insert_to_db():251]DEBUG: Getting the column names
+[2023-05-23 10:26:01,077->dcc_images.py->insert_to_db():258]DEBUG: Insertion result is:<sqlalchemy.engine.cursor.CursorResult object at 0x7f9e886faa60>
+[2023-05-23 10:26:01,816->App.py->main():56]INFO: Process finished
+[2023-05-23 10:26:01,817->App.py->main():48]INFO: Getting result from IMPC
+[2023-05-23 10:26:02,467->App.py->main():50]INFO: Inserting . . . 
+[2023-05-23 10:26:02,468->dcc_images.py->insert_to_db():226]WARNING: No record retrieved!
+[2023-05-23 10:26:02,468->App.py->main():56]INFO: Process finished
+[2023-05-23 10:26:02,468->App.py->main():48]INFO: Getting result from IMPC
+[2023-05-23 10:26:03,121->App.py->main():50]INFO: Inserting . . . 
+[2023-05-23 10:26:04,887->dcc_images.py->insert_to_db():251]DEBUG: Getting the column names
+[2023-05-23 10:26:10,635->dcc_images.py->insert_to_db():258]DEBUG: Insertion result is:<sqlalchemy.engine.cursor.CursorResult object at 0x7f9e91480580>
+[2023-05-23 10:26:11,455->App.py->main():56]INFO: Process finished
+[2023-05-23 10:26:11,455->App.py->main():48]INFO: Getting result from IMPC
+[2023-05-23 10:26:12,099->App.py->main():50]INFO: Inserting . . . 
+[2023-05-23 10:26:13,888->dcc_images.py->insert_to_db():251]DEBUG: Getting the column names
+[2023-05-23 10:26:20,001->dcc_images.py->insert_to_db():258]DEBUG: Insertion result is:<sqlalchemy.engine.cursor.CursorResult object at 0x7f9eab4f1ca0>
+[2023-05-23 10:26:20,738->App.py->main():56]INFO: Process finished
+[2023-05-23 10:26:20,738->App.py->main():48]INFO: Getting result from IMPC
+[2023-05-23 10:26:23,605->App.py->main():50]INFO: Inserting . . . 
+[2023-05-23 10:26:28,709->dcc_images.py->insert_to_db():251]DEBUG: Getting the column names
+[2023-05-23 10:27:04,093->dcc_images.py->insert_to_db():258]DEBUG: Insertion result is:<sqlalchemy.engine.cursor.CursorResult object at 0x7f9e716ae880>
+[2023-05-23 10:27:04,859->App.py->main():56]INFO: Process finished
+[2023-05-23 10:27:04,859->App.py->main():48]INFO: Getting result from IMPC
+[2023-05-23 10:27:06,370->App.py->main():50]INFO: Inserting . . . 
+[2023-05-23 10:27:08,695->dcc_images.py->insert_to_db():251]DEBUG: Getting the column names
+[2023-05-23 10:27:17,430->dcc_images.py->insert_to_db():258]DEBUG: Insertion result is:<sqlalchemy.engine.cursor.CursorResult object at 0x7f9e91a07160>
+[2023-05-23 10:27:18,184->App.py->main():56]INFO: Process finished
+[2023-05-23 10:27:18,184->App.py->main():48]INFO: Getting result from IMPC
+[2023-05-23 10:27:18,840->App.py->main():50]INFO: Inserting . . . 
+[2023-05-23 10:27:18,841->dcc_images.py->insert_to_db():226]WARNING: No record retrieved!
+[2023-05-23 10:27:18,841->App.py->main():56]INFO: Process finished
+[2023-05-23 10:27:18,842->App.py->main():48]INFO: Getting result from IMPC
+[2023-05-23 10:27:19,569->App.py->main():50]INFO: Inserting . . . 
+[2023-05-23 10:27:19,570->dcc_images.py->insert_to_db():226]WARNING: No record retrieved!
+[2023-05-23 10:27:19,570->App.py->main():56]INFO: Process finished
+[2023-05-23 10:27:19,570->App.py->main():58]INFO: Process finished

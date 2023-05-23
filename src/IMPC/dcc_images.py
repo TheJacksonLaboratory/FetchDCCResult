@@ -1,21 +1,19 @@
 import logging
-from logging.handlers import RotatingFileHandler
-import os
 from datetime import datetime
+from typing import Optional
 from urllib.parse import urlencode, urlunsplit
+
 import mysql
 import pandas as pd
 import requests
-from typing import Optional
 import sqlalchemy as db
-from collections import ChainMap
 from mysql.connector import errorcode
-from sqlalchemy.exc import SQLAlchemyError
-from sqlalchemy.orm import declarative_base, sessionmaker
-from sqlalchemy import Column, Integer, String, DateTime
+from sqlalchemy import Column, String, DateTime
 from sqlalchemy import create_engine
+from sqlalchemy.exc import SQLAlchemyError
+from sqlalchemy.orm import declarative_base
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger("__main__")
 
 
 def connect_to_db(user: str,
@@ -168,8 +166,10 @@ def filter_image_by(parameterKey: Optional[str] = None,
         if xmlFileName:
             filters["xmlFileName"] = xmlFileName
 
+        logger.debug(f"Filtering conditions are {filters}")
         query = urlencode(query=filters, doseq=True)
         url = urlunsplit(("https", "api.mousephenotype.org", "/media/J", query, ""))
+        logger.debug(url)
         print(url)
 
         """Get data back from impc"""
@@ -252,9 +252,9 @@ def insert_to_db(dataset: list[dict],
         with engine.connect() as conn:
             logger.debug("Getting the column names")
             keys = conn.execute(db.text("SELECT * FROM komp.dccimages;")).keys()
+
         insertData.columns = keys
         print(insertData)
-
         insertData.to_sql("dccimages", engine, schema="komp", if_exists='append', index=False, chunksize=1000)
         insertionResult = engine.connect().execute(db.text(f"SELECT * FROM komp.dccImages;"))
         logger.debug(f"Insertion result is:{insertionResult}")
@@ -264,6 +264,7 @@ def insert_to_db(dataset: list[dict],
     except SQLAlchemyError as err:
         error = str(err.__dict__["orig"])
         logger.error("Error message: {error}".format(error=error))
+
 
 '''
 db_server = "rslims.jax.org"

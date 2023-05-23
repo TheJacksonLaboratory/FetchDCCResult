@@ -6,7 +6,7 @@ from urllib.parse import urlencode, urlunsplit
 import mysql.connector
 import requests
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger("__main__")
 
 
 def connect_to_db(user: str,
@@ -104,10 +104,8 @@ def filter_line_procedure_by(columns: list[str],
     logger.info(url)
 
     try:
-        logger.info(f"Found data at {url}")
         response = requests.get(url)
         json_objects = response.json()
-
         result = []
         for json_obj in json_objects:
             db_obj = {"colonyId": "JR36697"}
@@ -143,7 +141,7 @@ def filter_experiment_procedure_by(animalId: Optional[str] = None,
                                    ) -> list[dict]:
     """
 
-    :param centre:
+    :param centre: Data center
     :param animalId: ID of the specimen/animal
     :param showDetails: Options to display details of the experiments_procedure
     :param status: Status of given
@@ -286,7 +284,7 @@ def insert_to_db(dataset: list[dict],
     :param password:
     :param server:
     :param database:
-    :return:
+    :return: None
     """
 
     """
@@ -312,6 +310,9 @@ def insert_to_db(dataset: list[dict],
             cursor.execute(stmt, list(data.values()))
             conn.commit()
 
+        conn.close()
+        logger.info("All insertions has been done, db connection closed.")
+
     if insert_type == "specimen":
         conn = connect_to_db(user=username, password=password, server=server, database=database)
         cursor = conn.cursor()
@@ -322,6 +323,9 @@ def insert_to_db(dataset: list[dict],
             stmt = "INSERT INTO %s ( %s ) VALUES ( %s );" % ("komp.experimentsonspecimens", columns, placeholders)
             cursor.execute(stmt, list(data.values()))
             conn.commit()
+
+        conn.close()
+        logger.info("All insertions has been done, db connection closed.")
 
     else:
         logger.warning("Invalid insert type")
