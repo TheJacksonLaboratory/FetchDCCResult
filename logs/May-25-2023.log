@@ -1,0 +1,246 @@
+[2023-05-25 10:18:14,663->dcc_images.py->connect_to_db():29]INFO: Successfully connected to rslims
+[2023-05-25 10:18:15,258->App.py->main():107]INFO: Fetching result for IMPC_XRY_034_001
+[2023-05-25 10:18:15,263->dcc_images.py->filter_image_by():169]DEBUG: Filtering conditions are {'parameterKey': 'IMPC_XRY_034_001', 'resultsize': '2147483647'}
+[2023-05-25 10:18:15,264->dcc_images.py->filter_image_by():172]DEBUG: https://api.mousephenotype.org/media/J?parameterKey=IMPC_XRY_034_001&resultsize=2147483647
+[2023-05-25 10:18:22,253->App.py->main():109]INFO: Inserting . . . 
+[2023-05-25 10:18:26,231->dcc_images.py->insert_to_db():255]DEBUG: Getting the column names
+[2023-05-25 10:18:33,077->dcc_images.py->insert_to_db():262]DEBUG: Number of rows in table is 10000
+[2023-05-25 10:18:33,106->App.py->main():115]INFO: Insert successfully
+[2023-05-25 10:18:33,107->App.py->main():107]INFO: Fetching result for IMPC_EYE_050_001
+[2023-05-25 10:18:33,107->dcc_images.py->filter_image_by():169]DEBUG: Filtering conditions are {'parameterKey': 'IMPC_EYE_050_001', 'resultsize': '2147483647'}
+[2023-05-25 10:18:33,107->dcc_images.py->filter_image_by():172]DEBUG: https://api.mousephenotype.org/media/J?parameterKey=IMPC_EYE_050_001&resultsize=2147483647
+[2023-05-25 10:18:34,835->App.py->main():109]INFO: Inserting . . . 
+[2023-05-25 10:18:37,383->dcc_images.py->insert_to_db():255]DEBUG: Getting the column names
+[2023-05-25 10:18:42,406->dcc_images.py->insert_to_db():262]DEBUG: Number of rows in table is 13768
+[2023-05-25 10:18:42,423->App.py->main():115]INFO: Insert successfully
+[2023-05-25 10:18:42,424->App.py->main():107]INFO: Fetching result for IMPC_XRY_048_001
+[2023-05-25 10:18:42,424->dcc_images.py->filter_image_by():169]DEBUG: Filtering conditions are {'parameterKey': 'IMPC_XRY_048_001', 'resultsize': '2147483647'}
+[2023-05-25 10:18:42,425->dcc_images.py->filter_image_by():172]DEBUG: https://api.mousephenotype.org/media/J?parameterKey=IMPC_XRY_048_001&resultsize=2147483647
+[2023-05-25 10:18:49,489->App.py->main():109]INFO: Inserting . . . 
+[2023-05-25 10:18:53,342->dcc_images.py->insert_to_db():255]DEBUG: Getting the column names
+[2023-05-25 10:19:03,264->dcc_images.py->insert_to_db():262]DEBUG: Number of rows in table is 23768
+[2023-05-25 10:19:03,302->App.py->main():115]INFO: Insert successfully
+[2023-05-25 10:19:03,302->App.py->main():107]INFO: Fetching result for IMPC_XRY_049_001
+[2023-05-25 10:19:03,302->dcc_images.py->filter_image_by():169]DEBUG: Filtering conditions are {'parameterKey': 'IMPC_XRY_049_001', 'resultsize': '2147483647'}
+[2023-05-25 10:19:03,303->dcc_images.py->filter_image_by():172]DEBUG: https://api.mousephenotype.org/media/J?parameterKey=IMPC_XRY_049_001&resultsize=2147483647
+[2023-05-25 10:19:10,154->App.py->main():109]INFO: Inserting . . . 
+[2023-05-25 10:19:13,992->dcc_images.py->insert_to_db():255]DEBUG: Getting the column names
+[2023-05-25 10:19:23,583->dcc_images.py->insert_to_db():262]DEBUG: Number of rows in table is 33768
+[2023-05-25 10:19:23,618->App.py->main():115]INFO: Insert successfully
+[2023-05-25 10:19:23,619->App.py->main():107]INFO: Fetching result for IMPC_XRY_050_001
+[2023-05-25 10:19:23,619->dcc_images.py->filter_image_by():169]DEBUG: Filtering conditions are {'parameterKey': 'IMPC_XRY_050_001', 'resultsize': '2147483647'}
+[2023-05-25 10:19:23,619->dcc_images.py->filter_image_by():172]DEBUG: https://api.mousephenotype.org/media/J?parameterKey=IMPC_XRY_050_001&resultsize=2147483647
+[2023-05-25 10:19:31,092->App.py->main():109]INFO: Inserting . . . 
+[2023-05-25 10:19:35,021->dcc_images.py->insert_to_db():255]DEBUG: Getting the column names
+[2023-05-25 10:19:44,244->dcc_images.py->insert_to_db():262]DEBUG: Number of rows in table is 43768
+[2023-05-25 10:19:44,289->App.py->main():115]INFO: Insert successfully
+[2023-05-25 10:19:44,289->App.py->main():107]INFO: Fetching result for IMPC_XRY_051_001
+[2023-05-25 10:19:44,290->dcc_images.py->filter_image_by():169]DEBUG: Filtering conditions are {'parameterKey': 'IMPC_XRY_051_001', 'resultsize': '2147483647'}
+[2023-05-25 10:19:44,290->dcc_images.py->filter_image_by():172]DEBUG: https://api.mousephenotype.org/media/J?parameterKey=IMPC_XRY_051_001&resultsize=2147483647
+[2023-05-25 10:19:50,922->App.py->main():109]INFO: Inserting . . . 
+[2023-05-25 10:19:54,767->dcc_images.py->insert_to_db():255]DEBUG: Getting the column names
+[2023-05-25 10:20:05,149->dcc_images.py->insert_to_db():262]DEBUG: Number of rows in table is 53768
+[2023-05-25 10:20:05,194->App.py->main():115]INFO: Insert successfully
+[2023-05-25 10:20:05,195->App.py->main():107]INFO: Fetching result for IMPC_CSD_085_001
+[2023-05-25 10:20:05,195->dcc_images.py->filter_image_by():169]DEBUG: Filtering conditions are {'parameterKey': 'IMPC_CSD_085_001', 'resultsize': '2147483647'}
+[2023-05-25 10:20:05,195->dcc_images.py->filter_image_by():172]DEBUG: https://api.mousephenotype.org/media/J?parameterKey=IMPC_CSD_085_001&resultsize=2147483647
+[2023-05-25 10:20:06,711->App.py->main():109]INFO: Inserting . . . 
+[2023-05-25 10:20:08,911->dcc_images.py->insert_to_db():255]DEBUG: Getting the column names
+[2023-05-25 10:20:15,952->dcc_images.py->insert_to_db():262]DEBUG: Number of rows in table is 55397
+[2023-05-25 10:20:15,967->App.py->main():115]INFO: Insert successfully
+[2023-05-25 10:20:15,969->App.py->main():107]INFO: Fetching result for IMPC_ABR_014_001
+[2023-05-25 10:20:15,969->dcc_images.py->filter_image_by():169]DEBUG: Filtering conditions are {'parameterKey': 'IMPC_ABR_014_001', 'resultsize': '2147483647'}
+[2023-05-25 10:20:15,969->dcc_images.py->filter_image_by():172]DEBUG: https://api.mousephenotype.org/media/J?parameterKey=IMPC_ABR_014_001&resultsize=2147483647
+[2023-05-25 10:20:18,507->App.py->main():109]INFO: Inserting . . . 
+[2023-05-25 10:20:22,403->dcc_images.py->insert_to_db():255]DEBUG: Getting the column names
+[2023-05-25 10:20:32,551->dcc_images.py->insert_to_db():262]DEBUG: Number of rows in table is 65397
+[2023-05-25 10:20:32,601->App.py->main():115]INFO: Insert successfully
+[2023-05-25 10:20:32,601->App.py->main():107]INFO: Fetching result for JAX_ERG_047_001
+[2023-05-25 10:20:32,602->dcc_images.py->filter_image_by():169]DEBUG: Filtering conditions are {'parameterKey': 'JAX_ERG_047_001', 'resultsize': '2147483647'}
+[2023-05-25 10:20:32,602->dcc_images.py->filter_image_by():172]DEBUG: https://api.mousephenotype.org/media/J?parameterKey=JAX_ERG_047_001&resultsize=2147483647
+[2023-05-25 10:20:34,171->App.py->main():109]INFO: Inserting . . . 
+[2023-05-25 10:20:36,312->dcc_images.py->insert_to_db():255]DEBUG: Getting the column names
+[2023-05-25 10:20:41,767->dcc_images.py->insert_to_db():262]DEBUG: Number of rows in table is 67043
+[2023-05-25 10:20:41,777->App.py->main():115]INFO: Insert successfully
+[2023-05-25 10:20:41,780->App.py->main():107]INFO: Fetching result for JAX_SLW_016_001
+[2023-05-25 10:20:41,781->dcc_images.py->filter_image_by():169]DEBUG: Filtering conditions are {'parameterKey': 'JAX_SLW_016_001', 'resultsize': '2147483647'}
+[2023-05-25 10:20:41,781->dcc_images.py->filter_image_by():172]DEBUG: https://api.mousephenotype.org/media/J?parameterKey=JAX_SLW_016_001&resultsize=2147483647
+[2023-05-25 10:20:43,769->App.py->main():109]INFO: Inserting . . . 
+[2023-05-25 10:20:47,063->dcc_images.py->insert_to_db():255]DEBUG: Getting the column names
+[2023-05-25 10:20:55,987->dcc_images.py->insert_to_db():262]DEBUG: Number of rows in table is 74409
+[2023-05-25 10:20:56,016->App.py->main():115]INFO: Insert successfully
+[2023-05-25 10:20:56,016->App.py->main():107]INFO: Fetching result for IMPC_ALZ_075_001
+[2023-05-25 10:20:56,016->dcc_images.py->filter_image_by():169]DEBUG: Filtering conditions are {'parameterKey': 'IMPC_ALZ_075_001', 'resultsize': '2147483647'}
+[2023-05-25 10:20:56,016->dcc_images.py->filter_image_by():172]DEBUG: https://api.mousephenotype.org/media/J?parameterKey=IMPC_ALZ_075_001&resultsize=2147483647
+[2023-05-25 10:21:02,584->App.py->main():109]INFO: Inserting . . . 
+[2023-05-25 10:21:06,517->dcc_images.py->insert_to_db():255]DEBUG: Getting the column names
+[2023-05-25 10:21:17,244->dcc_images.py->insert_to_db():262]DEBUG: Number of rows in table is 84409
+[2023-05-25 10:21:17,294->App.py->main():115]INFO: Insert successfully
+[2023-05-25 10:21:17,294->App.py->main():107]INFO: Fetching result for IMPC_ALZ_076_001
+[2023-05-25 10:21:17,295->dcc_images.py->filter_image_by():169]DEBUG: Filtering conditions are {'parameterKey': 'IMPC_ALZ_076_001', 'resultsize': '2147483647'}
+[2023-05-25 10:21:17,295->dcc_images.py->filter_image_by():172]DEBUG: https://api.mousephenotype.org/media/J?parameterKey=IMPC_ALZ_076_001&resultsize=2147483647
+[2023-05-25 10:21:18,011->dcc_images.py->filter_image_by():185]INFO: No record found at https://api.mousephenotype.org/media/J?parameterKey=IMPC_ALZ_076_001&resultsize=2147483647
+[2023-05-25 10:21:18,020->App.py->main():109]INFO: Inserting . . . 
+[2023-05-25 10:21:18,021->dcc_images.py->insert_to_db():230]WARNING: No record retrieved!
+[2023-05-25 10:21:18,022->App.py->main():115]INFO: Insert successfully
+[2023-05-25 10:21:18,022->App.py->main():107]INFO: Fetching result for IMPC_ELZ_064_001
+[2023-05-25 10:21:18,022->dcc_images.py->filter_image_by():169]DEBUG: Filtering conditions are {'parameterKey': 'IMPC_ELZ_064_001', 'resultsize': '2147483647'}
+[2023-05-25 10:21:18,023->dcc_images.py->filter_image_by():172]DEBUG: https://api.mousephenotype.org/media/J?parameterKey=IMPC_ELZ_064_001&resultsize=2147483647
+[2023-05-25 10:21:20,054->App.py->main():109]INFO: Inserting . . . 
+[2023-05-25 10:21:22,972->dcc_images.py->insert_to_db():255]DEBUG: Getting the column names
+[2023-05-25 10:21:32,084->dcc_images.py->insert_to_db():262]DEBUG: Number of rows in table is 89518
+[2023-05-25 10:21:32,114->App.py->main():115]INFO: Insert successfully
+[2023-05-25 10:21:32,115->App.py->main():107]INFO: Fetching result for IMPC_HIS_177_001
+[2023-05-25 10:21:32,115->dcc_images.py->filter_image_by():169]DEBUG: Filtering conditions are {'parameterKey': 'IMPC_HIS_177_001', 'resultsize': '2147483647'}
+[2023-05-25 10:21:32,115->dcc_images.py->filter_image_by():172]DEBUG: https://api.mousephenotype.org/media/J?parameterKey=IMPC_HIS_177_001&resultsize=2147483647
+[2023-05-25 10:21:32,773->dcc_images.py->filter_image_by():185]INFO: No record found at https://api.mousephenotype.org/media/J?parameterKey=IMPC_HIS_177_001&resultsize=2147483647
+[2023-05-25 10:21:32,781->App.py->main():109]INFO: Inserting . . . 
+[2023-05-25 10:21:32,782->dcc_images.py->insert_to_db():230]WARNING: No record retrieved!
+[2023-05-25 10:21:32,783->App.py->main():115]INFO: Insert successfully
+[2023-05-25 10:21:32,783->App.py->main():107]INFO: Fetching result for IMPC_EOL_001_001
+[2023-05-25 10:21:32,783->dcc_images.py->filter_image_by():169]DEBUG: Filtering conditions are {'parameterKey': 'IMPC_EOL_001_001', 'resultsize': '2147483647'}
+[2023-05-25 10:21:32,783->dcc_images.py->filter_image_by():172]DEBUG: https://api.mousephenotype.org/media/J?parameterKey=IMPC_EOL_001_001&resultsize=2147483647
+[2023-05-25 10:21:33,437->App.py->main():109]INFO: Inserting . . . 
+[2023-05-25 10:21:35,242->dcc_images.py->insert_to_db():255]DEBUG: Getting the column names
+[2023-05-25 10:21:46,218->dcc_images.py->insert_to_db():262]DEBUG: Number of rows in table is 89521
+[2023-05-25 10:21:46,219->App.py->main():115]INFO: Insert successfully
+[2023-05-25 10:21:46,219->App.py->main():107]INFO: Fetching result for IMPC_EOL_012_001
+[2023-05-25 10:21:46,220->dcc_images.py->filter_image_by():169]DEBUG: Filtering conditions are {'parameterKey': 'IMPC_EOL_012_001', 'resultsize': '2147483647'}
+[2023-05-25 10:21:46,220->dcc_images.py->filter_image_by():172]DEBUG: https://api.mousephenotype.org/media/J?parameterKey=IMPC_EOL_012_001&resultsize=2147483647
+[2023-05-25 10:21:46,886->dcc_images.py->filter_image_by():185]INFO: No record found at https://api.mousephenotype.org/media/J?parameterKey=IMPC_EOL_012_001&resultsize=2147483647
+[2023-05-25 10:21:46,887->App.py->main():109]INFO: Inserting . . . 
+[2023-05-25 10:21:46,887->dcc_images.py->insert_to_db():230]WARNING: No record retrieved!
+[2023-05-25 10:21:46,887->App.py->main():115]INFO: Insert successfully
+[2023-05-25 10:21:46,887->App.py->main():107]INFO: Fetching result for IMPC_EMO_001_001
+[2023-05-25 10:21:46,888->dcc_images.py->filter_image_by():169]DEBUG: Filtering conditions are {'parameterKey': 'IMPC_EMO_001_001', 'resultsize': '2147483647'}
+[2023-05-25 10:21:46,888->dcc_images.py->filter_image_by():172]DEBUG: https://api.mousephenotype.org/media/J?parameterKey=IMPC_EMO_001_001&resultsize=2147483647
+[2023-05-25 10:21:47,848->App.py->main():109]INFO: Inserting . . . 
+[2023-05-25 10:21:49,862->dcc_images.py->insert_to_db():255]DEBUG: Getting the column names
+[2023-05-25 10:21:55,609->dcc_images.py->insert_to_db():262]DEBUG: Number of rows in table is 89750
+[2023-05-25 10:21:55,614->App.py->main():115]INFO: Insert successfully
+[2023-05-25 10:21:55,615->App.py->main():107]INFO: Fetching result for IMPC_EMO_017_001
+[2023-05-25 10:21:55,615->dcc_images.py->filter_image_by():169]DEBUG: Filtering conditions are {'parameterKey': 'IMPC_EMO_017_001', 'resultsize': '2147483647'}
+[2023-05-25 10:21:55,615->dcc_images.py->filter_image_by():172]DEBUG: https://api.mousephenotype.org/media/J?parameterKey=IMPC_EMO_017_001&resultsize=2147483647
+[2023-05-25 10:21:56,277->dcc_images.py->filter_image_by():185]INFO: No record found at https://api.mousephenotype.org/media/J?parameterKey=IMPC_EMO_017_001&resultsize=2147483647
+[2023-05-25 10:21:56,279->App.py->main():109]INFO: Inserting . . . 
+[2023-05-25 10:21:56,279->dcc_images.py->insert_to_db():230]WARNING: No record retrieved!
+[2023-05-25 10:21:56,280->App.py->main():115]INFO: Insert successfully
+[2023-05-25 10:21:56,280->App.py->main():107]INFO: Fetching result for IMPC_GEM_049_001
+[2023-05-25 10:21:56,280->dcc_images.py->filter_image_by():169]DEBUG: Filtering conditions are {'parameterKey': 'IMPC_GEM_049_001', 'resultsize': '2147483647'}
+[2023-05-25 10:21:56,280->dcc_images.py->filter_image_by():172]DEBUG: https://api.mousephenotype.org/media/J?parameterKey=IMPC_GEM_049_001&resultsize=2147483647
+[2023-05-25 10:21:57,233->App.py->main():109]INFO: Inserting . . . 
+[2023-05-25 10:21:59,238->dcc_images.py->insert_to_db():255]DEBUG: Getting the column names
+[2023-05-25 10:22:04,726->dcc_images.py->insert_to_db():262]DEBUG: Number of rows in table is 89932
+[2023-05-25 10:22:04,730->App.py->main():115]INFO: Insert successfully
+[2023-05-25 10:22:04,731->App.py->main():107]INFO: Fetching result for IMPC_GEO_050_001
+[2023-05-25 10:22:04,731->dcc_images.py->filter_image_by():169]DEBUG: Filtering conditions are {'parameterKey': 'IMPC_GEO_050_001', 'resultsize': '2147483647'}
+[2023-05-25 10:22:04,732->dcc_images.py->filter_image_by():172]DEBUG: https://api.mousephenotype.org/media/J?parameterKey=IMPC_GEO_050_001&resultsize=2147483647
+[2023-05-25 10:22:05,552->App.py->main():109]INFO: Inserting . . . 
+[2023-05-25 10:22:07,527->dcc_images.py->insert_to_db():255]DEBUG: Getting the column names
+[2023-05-25 10:22:12,999->dcc_images.py->insert_to_db():262]DEBUG: Number of rows in table is 90055
+[2023-05-25 10:22:13,004->App.py->main():115]INFO: Insert successfully
+[2023-05-25 10:22:13,005->App.py->main():107]INFO: Fetching result for IMPC_GEP_064_001
+[2023-05-25 10:22:13,005->dcc_images.py->filter_image_by():169]DEBUG: Filtering conditions are {'parameterKey': 'IMPC_GEP_064_001', 'resultsize': '2147483647'}
+[2023-05-25 10:22:13,006->dcc_images.py->filter_image_by():172]DEBUG: https://api.mousephenotype.org/media/J?parameterKey=IMPC_GEP_064_001&resultsize=2147483647
+[2023-05-25 10:22:13,956->App.py->main():109]INFO: Inserting . . . 
+[2023-05-25 10:22:15,956->dcc_images.py->insert_to_db():255]DEBUG: Getting the column names
+[2023-05-25 10:22:21,277->dcc_images.py->insert_to_db():262]DEBUG: Number of rows in table is 90329
+[2023-05-25 10:22:21,281->App.py->main():115]INFO: Insert successfully
+[2023-05-25 10:22:21,287->App.py->main():107]INFO: Fetching result for IMPC_GEL_044_001
+[2023-05-25 10:22:21,287->dcc_images.py->filter_image_by():169]DEBUG: Filtering conditions are {'parameterKey': 'IMPC_GEL_044_001', 'resultsize': '2147483647'}
+[2023-05-25 10:22:21,288->dcc_images.py->filter_image_by():172]DEBUG: https://api.mousephenotype.org/media/J?parameterKey=IMPC_GEL_044_001&resultsize=2147483647
+[2023-05-25 10:22:22,249->App.py->main():109]INFO: Inserting . . . 
+[2023-05-25 10:22:24,357->dcc_images.py->insert_to_db():255]DEBUG: Getting the column names
+[2023-05-25 10:22:29,526->dcc_images.py->insert_to_db():262]DEBUG: Number of rows in table is 90540
+[2023-05-25 10:22:29,529->App.py->main():115]INFO: Insert successfully
+[2023-05-25 10:22:29,530->App.py->main():107]INFO: Fetching result for IMPC_EMA_001_001
+[2023-05-25 10:22:29,530->dcc_images.py->filter_image_by():169]DEBUG: Filtering conditions are {'parameterKey': 'IMPC_EMA_001_001', 'resultsize': '2147483647'}
+[2023-05-25 10:22:29,530->dcc_images.py->filter_image_by():172]DEBUG: https://api.mousephenotype.org/media/J?parameterKey=IMPC_EMA_001_001&resultsize=2147483647
+[2023-05-25 10:22:30,899->App.py->main():109]INFO: Inserting . . . 
+[2023-05-25 10:22:32,953->dcc_images.py->insert_to_db():255]DEBUG: Getting the column names
+[2023-05-25 10:22:39,099->dcc_images.py->insert_to_db():262]DEBUG: Number of rows in table is 91390
+[2023-05-25 10:22:39,108->App.py->main():115]INFO: Insert successfully
+[2023-05-25 10:22:39,109->App.py->main():107]INFO: Fetching result for IMPC_EMA_017_001
+[2023-05-25 10:22:39,109->dcc_images.py->filter_image_by():169]DEBUG: Filtering conditions are {'parameterKey': 'IMPC_EMA_017_001', 'resultsize': '2147483647'}
+[2023-05-25 10:22:39,110->dcc_images.py->filter_image_by():172]DEBUG: https://api.mousephenotype.org/media/J?parameterKey=IMPC_EMA_017_001&resultsize=2147483647
+[2023-05-25 10:22:39,766->dcc_images.py->filter_image_by():185]INFO: No record found at https://api.mousephenotype.org/media/J?parameterKey=IMPC_EMA_017_001&resultsize=2147483647
+[2023-05-25 10:22:39,768->App.py->main():109]INFO: Inserting . . . 
+[2023-05-25 10:22:39,769->dcc_images.py->insert_to_db():230]WARNING: No record retrieved!
+[2023-05-25 10:22:39,769->App.py->main():115]INFO: Insert successfully
+[2023-05-25 10:22:39,769->App.py->main():107]INFO: Fetching result for IMPC_GPL_007_001
+[2023-05-25 10:22:39,769->dcc_images.py->filter_image_by():169]DEBUG: Filtering conditions are {'parameterKey': 'IMPC_GPL_007_001', 'resultsize': '2147483647'}
+[2023-05-25 10:22:39,769->dcc_images.py->filter_image_by():172]DEBUG: https://api.mousephenotype.org/media/J?parameterKey=IMPC_GPL_007_001&resultsize=2147483647
+[2023-05-25 10:22:40,419->App.py->main():109]INFO: Inserting . . . 
+[2023-05-25 10:22:42,268->dcc_images.py->insert_to_db():255]DEBUG: Getting the column names
+[2023-05-25 10:22:47,171->dcc_images.py->insert_to_db():262]DEBUG: Number of rows in table is 91402
+[2023-05-25 10:22:47,173->App.py->main():115]INFO: Insert successfully
+[2023-05-25 10:22:47,174->App.py->main():107]INFO: Fetching result for IMPC_GPM_007_001
+[2023-05-25 10:22:47,174->dcc_images.py->filter_image_by():169]DEBUG: Filtering conditions are {'parameterKey': 'IMPC_GPM_007_001', 'resultsize': '2147483647'}
+[2023-05-25 10:22:47,174->dcc_images.py->filter_image_by():172]DEBUG: https://api.mousephenotype.org/media/J?parameterKey=IMPC_GPM_007_001&resultsize=2147483647
+[2023-05-25 10:22:47,833->dcc_images.py->filter_image_by():185]INFO: No record found at https://api.mousephenotype.org/media/J?parameterKey=IMPC_GPM_007_001&resultsize=2147483647
+[2023-05-25 10:22:47,834->App.py->main():109]INFO: Inserting . . . 
+[2023-05-25 10:22:47,834->dcc_images.py->insert_to_db():230]WARNING: No record retrieved!
+[2023-05-25 10:22:47,834->App.py->main():115]INFO: Insert successfully
+[2023-05-25 10:22:47,834->App.py->main():107]INFO: Fetching result for IMPC_GPO_007_001
+[2023-05-25 10:22:47,835->dcc_images.py->filter_image_by():169]DEBUG: Filtering conditions are {'parameterKey': 'IMPC_GPO_007_001', 'resultsize': '2147483647'}
+[2023-05-25 10:22:47,835->dcc_images.py->filter_image_by():172]DEBUG: https://api.mousephenotype.org/media/J?parameterKey=IMPC_GPO_007_001&resultsize=2147483647
+[2023-05-25 10:22:48,479->App.py->main():109]INFO: Inserting . . . 
+[2023-05-25 10:22:50,329->dcc_images.py->insert_to_db():255]DEBUG: Getting the column names
+[2023-05-25 10:22:55,298->dcc_images.py->insert_to_db():262]DEBUG: Number of rows in table is 91408
+[2023-05-25 10:22:55,300->App.py->main():115]INFO: Insert successfully
+[2023-05-25 10:22:55,300->App.py->main():107]INFO: Fetching result for IMPC_GPP_007_001
+[2023-05-25 10:22:55,300->dcc_images.py->filter_image_by():169]DEBUG: Filtering conditions are {'parameterKey': 'IMPC_GPP_007_001', 'resultsize': '2147483647'}
+[2023-05-25 10:22:55,301->dcc_images.py->filter_image_by():172]DEBUG: https://api.mousephenotype.org/media/J?parameterKey=IMPC_GPP_007_001&resultsize=2147483647
+[2023-05-25 10:22:55,962->App.py->main():109]INFO: Inserting . . . 
+[2023-05-25 10:22:57,901->dcc_images.py->insert_to_db():255]DEBUG: Getting the column names
+[2023-05-25 10:23:03,186->dcc_images.py->insert_to_db():262]DEBUG: Number of rows in table is 91432
+[2023-05-25 10:23:03,187->App.py->main():115]INFO: Insert successfully
+[2023-05-25 10:23:03,188->App.py->main():107]INFO: Fetching result for IMPC_ECG_025_001
+[2023-05-25 10:23:03,188->dcc_images.py->filter_image_by():169]DEBUG: Filtering conditions are {'parameterKey': 'IMPC_ECG_025_001', 'resultsize': '2147483647'}
+[2023-05-25 10:23:03,188->dcc_images.py->filter_image_by():172]DEBUG: https://api.mousephenotype.org/media/J?parameterKey=IMPC_ECG_025_001&resultsize=2147483647
+[2023-05-25 10:23:05,356->App.py->main():109]INFO: Inserting . . . 
+[2023-05-25 10:23:09,148->dcc_images.py->insert_to_db():255]DEBUG: Getting the column names
+[2023-05-25 10:23:20,010->dcc_images.py->insert_to_db():262]DEBUG: Number of rows in table is 101432
+[2023-05-25 10:23:20,061->App.py->main():115]INFO: Insert successfully
+[2023-05-25 10:23:20,062->App.py->main():107]INFO: Fetching result for JAX_ERG_028_001
+[2023-05-25 10:23:20,062->dcc_images.py->filter_image_by():169]DEBUG: Filtering conditions are {'parameterKey': 'JAX_ERG_028_001', 'resultsize': '2147483647'}
+[2023-05-25 10:23:20,062->dcc_images.py->filter_image_by():172]DEBUG: https://api.mousephenotype.org/media/J?parameterKey=JAX_ERG_028_001&resultsize=2147483647
+[2023-05-25 10:23:21,633->App.py->main():109]INFO: Inserting . . . 
+[2023-05-25 10:23:23,863->dcc_images.py->insert_to_db():255]DEBUG: Getting the column names
+[2023-05-25 10:23:30,421->dcc_images.py->insert_to_db():262]DEBUG: Number of rows in table is 103617
+[2023-05-25 10:23:30,441->App.py->main():115]INFO: Insert successfully
+[2023-05-25 10:23:30,442->App.py->main():107]INFO: Fetching result for IMPC_WEL_003_001
+[2023-05-25 10:23:30,442->dcc_images.py->filter_image_by():169]DEBUG: Filtering conditions are {'parameterKey': 'IMPC_WEL_003_001', 'resultsize': '2147483647'}
+[2023-05-25 10:23:30,443->dcc_images.py->filter_image_by():172]DEBUG: https://api.mousephenotype.org/media/J?parameterKey=IMPC_WEL_003_001&resultsize=2147483647
+[2023-05-25 10:23:31,101->dcc_images.py->filter_image_by():185]INFO: No record found at https://api.mousephenotype.org/media/J?parameterKey=IMPC_WEL_003_001&resultsize=2147483647
+[2023-05-25 10:23:31,104->App.py->main():109]INFO: Inserting . . . 
+[2023-05-25 10:23:31,105->dcc_images.py->insert_to_db():230]WARNING: No record retrieved!
+[2023-05-25 10:23:31,105->App.py->main():115]INFO: Insert successfully
+[2023-05-25 10:23:31,105->App.py->main():107]INFO: Fetching result for IMPC_PAT_057_002
+[2023-05-25 10:23:31,105->dcc_images.py->filter_image_by():169]DEBUG: Filtering conditions are {'parameterKey': 'IMPC_PAT_057_002', 'resultsize': '2147483647'}
+[2023-05-25 10:23:31,106->dcc_images.py->filter_image_by():172]DEBUG: https://api.mousephenotype.org/media/J?parameterKey=IMPC_PAT_057_002&resultsize=2147483647
+[2023-05-25 10:23:31,769->dcc_images.py->filter_image_by():185]INFO: No record found at https://api.mousephenotype.org/media/J?parameterKey=IMPC_PAT_057_002&resultsize=2147483647
+[2023-05-25 10:23:31,770->App.py->main():109]INFO: Inserting . . . 
+[2023-05-25 10:23:31,770->dcc_images.py->insert_to_db():230]WARNING: No record retrieved!
+[2023-05-25 10:23:31,770->App.py->main():115]INFO: Insert successfully
+[2023-05-25 10:23:31,770->App.py->main():117]INFO: Done
+[2023-05-25 11:14:06,998->ebi_images.py->connect_to_db():33]INFO: Successfully connected to komp
+[2023-05-25 11:14:07,258->App.py->main():257]INFO: Connecting to development database
+[2023-05-25 11:14:08,574->App.py->main():265]INFO: Connection to development database closed
+[2023-05-25 11:14:08,574->App.py->main():270]DEBUG: Fetching result for JR number: JR18609, IMPC CODE: IMPC_XRY_034_001 
+[2023-05-25 11:15:14,514->ebi_images.py->connect_to_db():33]INFO: Successfully connected to komp
+[2023-05-25 11:15:14,772->App.py->main():257]INFO: Connecting to development database
+[2023-05-25 11:15:15,606->App.py->main():265]INFO: Connection to development database closed
+[2023-05-25 11:15:15,607->App.py->main():270]DEBUG: Fetching result for JR number: JR18609, IMPC CODE: IMPC_XRY_034_001 
+[2023-05-25 11:15:15,607->ebi_images.py->filter_image_by():97]DEBUG: Add condition rows:2147483647
+[2023-05-25 11:15:15,607->ebi_images.py->filter_image_by():97]DEBUG: Add condition colony_id:JR18609
+[2023-05-25 11:15:15,607->ebi_images.py->filter_image_by():97]DEBUG: Add condition parameter_stable_id:IMPC_XRY_034_001
+[2023-05-25 11:15:15,607->ebi_images.py->filter_image_by():101]DEBUG: Select condition is :rows:2147483647 AND colony_id:JR18609 AND parameter_stable_id:IMPC_XRY_034_001
+[2023-05-25 11:15:15,608->ebi_images.py->filter_image_by():106]DEBUG: URL is https://www.ebi.ac.uk/mi/impc/solr/experiment/select?q=rows:2147483647 AND colony_id:JR18609 AND parameter_stable_id:IMPC_XRY_034_001&fl=parameter_stable_id&fl=date_of_birth&fl=external_sample_id&fl=allele_symbol&fl=download_url&fl=jpeg_url&fl=experiment_source_id&fl=colony_id&fl=sex&rows=2147483647
+[2023-05-25 11:43:11,570->ebi_images.py->connect_to_db():33]INFO: Successfully connected to komp
+[2023-05-25 11:43:11,831->App.py->main():257]INFO: Connecting to development database
+[2023-05-25 11:43:12,751->App.py->main():265]INFO: Connection to development database closed
+[2023-05-25 11:43:12,751->App.py->main():270]DEBUG: Fetching result for JR number: JR18609, IMPC CODE: IMPC_XRY_034_001 
+[2023-05-25 11:43:12,751->ebi_images.py->filter_image_by():98]DEBUG: Add condition rows:2147483647
+[2023-05-25 11:43:12,751->ebi_images.py->filter_image_by():102]DEBUG: Select condition is :rows:2147483647
+[2023-05-25 11:43:12,751->ebi_images.py->filter_image_by():107]DEBUG: URL is https://www.ebi.ac.uk/mi/impc/solr/experiment/select?q=rows:2147483647&fl=parameter_stable_id&fl=date_of_birth&fl=external_sample_id&fl=allele_symbol&fl=download_url&fl=jpeg_url&fl=experiment_source_id&fl=colony_id&fl=sex&rows=2147483647

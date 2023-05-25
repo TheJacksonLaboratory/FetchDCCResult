@@ -5,7 +5,7 @@ import requests
 logger = logging.getLogger("__main__")
 
 
-def connect_to_db(user: str,
+def connect_to_db(username: str,
                   password: str,
                   server: str,
                   database: str) -> mysql.connector.connection:
@@ -14,7 +14,7 @@ def connect_to_db(user: str,
     :return: mysql.connector.connection
     """
     try:
-        conn = mysql.connector.connect(host=server, user=user, password=password, database=database)
+        conn = mysql.connector.connect(host=server, user=username, password=password, database=database)
         logger.info(f"Successfully connected to {database}")
         return conn
 
@@ -35,26 +35,31 @@ def filter_xml_by(fileName: str,
     logger.debug(url)
 
     try:
-        logger.info(f"Found data at {url}")
-        response = requests.get(url)
-        json_objects = response.json()
-        db_obj = {}
-        for json_obj in json_objects:
-            for key, val in json_obj.items():
+        response = requests.get(url).json()
+        status = 1 if response["total"] > 0 else 0
+        '''Data found'''
+        if status == 1:
+            db_obj = {}
+            for json_obj in response:
+                for key, val in json_obj.items():
 
-                def is_substring_of(keyName: str, columns: list[str]) -> bool:
-                    if not keyName or not columns:
-                        return False
-                    return any(filter(lambda x: keyName in x, columns))
+                    def is_substring_of(keyName: str, columns: list[str]) -> bool:
+                        if not keyName or not columns:
+                            return False
+                        return any(filter(lambda x: keyName in x, columns))
 
-                if is_substring_of(keyName=key, columns=columns):
-                    logger.debug(f"Adding {key} to database record")
-                    db_obj[key] = val
-                db_obj["logs"] = json_obj["logs"]
-                db_obj["lastUpdatedDate"] = json_obj["lastUpatedDate"]
-                db_obj["xmlId"] = json_obj["filename"].split(".")[2]
+                    if is_substring_of(keyName=key, columns=columns):
+                        logger.debug(f"Adding {key} to database record")
+                        db_obj[key] = val
+                    db_obj["logs"] = json_obj["logs"]
+                    db_obj["lastUpdatedDate"] = json_obj["lastUpatedDate"]
+                    db_obj["xmlId"] = json_obj["filename"].split(".")[2]
 
-        return db_obj
+            return db_obj
+
+        else:
+            logger.info(f"No record found at {url}")
+            return {}
 
     except requests.exceptions.HTTPError as err1:
         logger.error(err1)
@@ -133,7 +138,7 @@ def insert_to_db(db_object: dict,
 
     logger.info("Start to insert to file status table")
     cursor = conn.cursor()
-    print(row)
+    logger.info(row)
     placeholders = ', '.join(['%s'] * len(row))
     columns = ', '.join(row.keys())
     stmt = "INSERT INTO %s ( %s ) VALUES ( %s );" % ("KOMP.dccXmlFileStatus", columns, placeholders)

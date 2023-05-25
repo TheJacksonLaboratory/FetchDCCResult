@@ -13,14 +13,17 @@ from sqlalchemy.exc import SQLAlchemyError
 
 logger = logging.getLogger("__main__")
 
-ReturnType = {"parameter_stable_id": "ImpcCode", "date_of_birth": "DOB",
-              "external_sample_id": "AnimalID", "allele_symbol": "Symbol",
-              "download_url": "DownLoadFilePath", "jpeg_url": "JPEG",
-              "experiment_source_id": "ExperimentName",
-              "colony_id": "JR", "sex": "Sex"}
+nameMap = {"parameter_stable_id": "ImpcCode", "date_of_birth": "DOB",
+           "external_sample_id": "AnimalID", "allele_symbol": "Symbol",
+           "download_url": "DownLoadFilePath", "jpeg_url": "JPEG",
+           "experiment_source_id": "ExperimentName",
+           "colony_id": "JR", "sex": "Sex"}
+
+ReturnType = "parameter_stable_id, parameter_stable_id, date_of_birth, external_sample_id, allele_symbol" \
+             "download_url, jpeg_url, experiment_source_id, colony_id, sex"
 
 
-def connect_to_db(user: str,
+def connect_to_db(username: str,
                   password: str,
                   server: str,
                   database: str):
@@ -29,12 +32,11 @@ def connect_to_db(user: str,
     :return: mysql.connector.connection
     """
     try:
-        conn = mysql.connector.connect(host=server, user=user, password=password, database=database)
+        conn = mysql.connector.connect(host=server, user=username, password=password, database=database)
         logger.info(f"Successfully connected to {database}")
         return conn
 
     except mysql.connector.Error as err:
-
         logger.error(err)
 
     return None
@@ -60,9 +62,9 @@ def BFS(graph: dict,
             """
             If we found a match with keys, add it to the temp dict
             """
-            if node in ReturnType:
+            if node in nameMap:
                 logging.debug(f"Adding {node} now")
-                tempDict_[ReturnType[node]] = g[node]
+                tempDict_[nameMap[node]] = g[node]
 
         data = pd.Series(tempDict_).to_frame()
         data = data.transpose()
@@ -73,6 +75,8 @@ def filter_image_by(colonyId: Optional[str] = None,
                     parameter_stable_id: Optional[str] = None,
                     formats: Optional[str] = None,
                     indent: Optional[bool] = None,
+                    center: Optional[str] = None,
+                    start: Optional[int] = 0,
                     rows: Optional[int] = 0) -> list[pd.DataFrame]:
     """
     Function to build connection to backend database
@@ -81,8 +85,7 @@ def filter_image_by(colonyId: Optional[str] = None,
     if rows > 2 ** 31 - 1 or rows < 0:
         logger.error("Invalid start or result size")
         return []
-
-    dict_ = {"rows": rows}
+    dict_ = {}
     if colonyId:
         dict_["colony_id"] = colonyId
 
@@ -92,6 +95,9 @@ def filter_image_by(colonyId: Optional[str] = None,
     if formats:
         dict_["wt"] = indent
 
+    if center:
+        dict_["phenotyping_center"] = center
+
     filters = []
     for key, val in dict_.items():
         filter_ = key + ":" + val
@@ -100,7 +106,7 @@ def filter_image_by(colonyId: Optional[str] = None,
 
     selectCondition = " AND ".join(filters)
     logger.debug(f"Select condition is :{selectCondition}")
-    params = {"q": selectCondition, "fl": ReturnType, "rows": rows}
+    params = {"q": selectCondition, "indent": indent, "start": start, "rows": rows}
     query = urllib.parse.urlencode(params, doseq=True, safe=', :').replace("+", " ")
     url = urlunsplit(("https", "www.ebi.ac.uk", "/mi/impc/solr/experiment/select", query, ""))
     print(url)
@@ -108,12 +114,21 @@ def filter_image_by(colonyId: Optional[str] = None,
 
     try:
         payload = {}
-        headers = {}
-        response = requests.request("GET", url, headers=headers, data=payload)
-        json_objects = response.json()["response"]["docs"]
-        result = []
-        BFS(json_objects, result)
-        return result
+        headers = {
+            'Accept': 'application/json',
+            'Authorization': 'Basic c3ZjLWxpbXNkYkBqYXgub3JnOnZBJmNlMyhST3pBTA=='
+        }
+        response = requests.request("GET", url, headers=headers, data=payload).json()["response"]
+        data_found = 1 if response["numFound"] > 0 else 0
+        '''Data found'''
+        if data_found == 1:
+            json_objects = response["docs"]
+            result = []
+            BFS(json_objects, result)
+            return result
+
+        else:
+            logger.info(f"No record found at {url}")
 
     except requests.exceptions.HTTPError as err1:
         error = str(err1.__dict__)
@@ -133,11 +148,10 @@ def filter_image_by(colonyId: Optional[str] = None,
 
 
 def insert_to_db(dataset: list[pd.DataFrame],
-                 user: str,
+                 username: str,
                  password: str,
                  server: str,
                  database: str) -> None:
-
     if not dataset:
         logger.warning("No record retrieved!")
         return
@@ -157,15 +171,29 @@ def insert_to_db(dataset: list[pd.DataFrame],
 
     try:
         engine = create_engine("mysql+mysqlconnector://{0}:{1}@{2}/{3}".
-                               format(user, password, server, database),
+                               format(username, password, server, database),
                                pool_recycle=3600,
                                pool_timeout=57600,
                                future=True)
         # print(df)
         df.to_sql("ebiimages", engine, if_exists='append', index=False, chunksize=1000)
-        result = engine.connect().execute(text("SELECT COUNT(*) FROM komp.ebiimages;"))
-        logger.debug(f"Number of rows in table is {result.first()[0]}")
+        rows = engine.connect().execute(text("SELECT COUNT(*) FROM komp.ebiimages;")).scalar()
+        logger.debug(f"Number of rows in table is {rows}")
 
     except SQLAlchemyError as err:
         error = str(err.__dict__["orig"])
         logger.error("Error message: {error}".format(error=error))
+
+
+db_server = "rslims.jax.org"
+db_user = "dba"
+db_password = "rsdba"
+db_name = "komp"
+call_back = filter_image_by(colonyId="JR18609",
+                            parameter_stable_id="IMPC_XRY_034_001",
+                            indent=True,
+                            center="JAX",
+                            rows=2 ** 31 - 1,
+                            )
+print(call_back)
+insert_to_db(dataset=call_back, username=db_user, password=db_password, server=db_server, database=db_name)

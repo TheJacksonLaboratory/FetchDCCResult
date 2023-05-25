@@ -1,7 +1,6 @@
 import logging
 from datetime import datetime
 from typing import Optional
-import urllib
 from urllib.parse import urlencode, urlunsplit
 import mysql.connector
 import requests
@@ -104,16 +103,22 @@ def filter_line_procedure_by(columns: list[str],
     logger.info(url)
 
     try:
-        response = requests.get(url)
-        json_objects = response.json()
-        result = []
-        for json_obj in json_objects:
-            db_obj = {"colonyId": "JR36697"}
-            db_obj = DFS(json_object=json_obj, columns=columns, db_obj=db_obj)
-            logger.info(f"Result dict is {db_obj}")
-            result.append(db_obj)
+        response = requests.get(url).json()
+        status = 1 if response["total"] > 0 else 0
+        '''Data found'''
+        if status == 1:
+            result = []
+            for json_obj in response:
+                db_obj = {"colonyId": "JR36697"}
+                db_obj = DFS(json_object=json_obj, columns=columns, db_obj=db_obj)
+                logger.info(f"Result dict is {db_obj}")
+                result.append(db_obj)
 
-        return result
+            return result
+
+        else:
+            logger.info(f"No record found at {url}")
+            return []
 
     except requests.exceptions.HTTPError as err1:
         error = str(err1.__dict__)
@@ -174,17 +179,23 @@ def filter_experiment_procedure_by(animalId: Optional[str] = None,
     print(url)
 
     try:
-        response = requests.get(url)
-        json_objects = response.json()
-        for json_obj in json_objects:
-            # result.append(json_obj)
-            log = json_obj["logs"]
-            json_obj.update(logs=str(log))
-            json_obj["_procedure"] = json_obj["procedure"]
-            del json_obj["procedure"]
-            json_obj["ageAtExperiment"] = json_obj["age"]
-            del json_obj["age"]
-            result.append(json_obj)
+        response = requests.get(url).json()
+        status = 1 if response["total"] > 0 else 0
+        '''Data found'''
+        if status == 1:
+
+            for json_obj in response:
+                # result.append(json_obj)
+                log = json_obj["logs"]
+                json_obj.update(logs=str(log))
+                json_obj["_procedure"] = json_obj["procedure"]
+                del json_obj["procedure"]
+                json_obj["ageAtExperiment"] = json_obj["age"]
+                del json_obj["age"]
+                result.append(json_obj)
+
+        else:
+            logger.info(f"No record found at {url}")
 
     except requests.exceptions.HTTPError as err1:
         error = str(err1.__dict__)
@@ -214,9 +225,9 @@ def filer_specimen_by(animalId: Optional[str],
                       ) -> list[dict]:
     """
 
-    :param animalId:
-    :param status:
-    :param pipeline:
+    :param animalId: Organism ID of a mouse
+    :param status: Living condtion of a mouse, like alive or death
+    :param pipeline: ID of a line of mice
     :param createdDateFrom:
     :param createdDateTo:
     :param centre:
@@ -246,10 +257,15 @@ def filer_specimen_by(animalId: Optional[str],
     logger.info(url)
 
     try:
-        response = requests.get(url)
-        json_objects = response.json()
-        for json_obj in json_objects:
-            result.append(json_obj)
+        response = requests.get(url).json()
+        status = 1 if response["total"] > 0 else 0
+        '''Data found'''
+        if status == 1:
+            for json_obj in response:
+                result.append(json_obj)
+
+        else:
+            logger.info(f"No record found at {url}")
 
     except requests.exceptions.HTTPError as err1:
         error = str(err1.__dict__)
@@ -330,3 +346,4 @@ def insert_to_db(dataset: list[dict],
     else:
         logger.warning("Invalid insert type")
         return
+

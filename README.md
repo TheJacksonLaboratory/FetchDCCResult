@@ -2,12 +2,12 @@
 
 <br>
 
-This project is intend to monitor the staus of files and data that are submitted to DCC. It can pull back feedback of submitted xml files; data of submitted procedure (including specimen, lines etc); and media files. As of today, all IMPC part has been implemented and well tested. EBI pending implementation.:
+This project is intend to monitor the staus of files and data that are submitted to DCC. It can pull back feedback of submitted xml files; data of submitted procedure (including specimen, lines etc); and media files. As of today, all IMPC part and EBI procedure part has been implemented and well tested. EBI images needs some more work.
 
 
 <br>
 
-## Table of Contents (Optional)
+## Table of Contents 
 
 If your README is long, add a table of contents to make it easy for users to find what they need.
 

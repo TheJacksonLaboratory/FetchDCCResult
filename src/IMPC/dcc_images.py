@@ -174,30 +174,32 @@ def filter_image_by(parameterKey: Optional[str] = None,
 
         """Get data back from impc"""
         try:
-            response = requests.get(url)
-            payload = response.json()
+            response = requests.get(url).json()
+            status = 1 if response["total"] > 0 else 0
             '''Data found'''
-            if payload["total"] > 0:
-                # colNames = payload["mediaFiles"][0].keys()
-                for dict_ in payload["mediaFiles"]:
+            if status == 1:
+                for dict_ in response["mediaFiles"]:
                     result.append(dict_)
                     # print(result)
+            else:
+                logger.info(f"No record found at {url}")
+                return []
 
         except requests.exceptions.HTTPError as err1:
             error = str(err1.__dict__)
-            print(error)
+            logger.error(error)
 
         except requests.exceptions.ConnectionError as err2:
             error = str(err2.__dict__)
-            print(error)
+            logger.error(error)
 
         except requests.exceptions.Timeout as err3:
             error = str(err3.__dict__)
-            print(error)
+            logger.error(error)
 
         except requests.exceptions.RequestException as err4:
             error = str(err4.__dict__)
-            print(error)
+            logger.error(error)
 
     return result
 
@@ -256,10 +258,8 @@ def insert_to_db(dataset: list[dict],
         insertData.columns = keys
         print(insertData)
         insertData.to_sql("dccimages", engine, schema="komp", if_exists='append', index=False, chunksize=1000)
-        insertionResult = engine.connect().execute(db.text(f"SELECT * FROM komp.dccImages;"))
-        logger.debug(f"Insertion result is:{insertionResult}")
-        result = engine.connect().execute(db.text(f"SELECT COUNT(*) FROM komp.dccImages;"))
-        print(result.first()[0])
+        rows = engine.connect().execute(db.text("SELECT COUNT(*) FROM komp.dccImages;")).scalar()
+        logger.debug(f"Number of rows in table is {rows}")
 
     except SQLAlchemyError as err:
         error = str(err.__dict__["orig"])

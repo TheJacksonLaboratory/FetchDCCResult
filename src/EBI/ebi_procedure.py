@@ -76,6 +76,7 @@ def filer_procedure_by(columns: list[str],
                        parameter_stable_id: Optional[str] = None,
                        data_point: Optional[str] = None,
                        rows: Optional[int] = 0) -> list[dict]:
+
     if not columns:
         logger.error("No column headers")
         return []
@@ -135,12 +136,21 @@ def filer_procedure_by(columns: list[str],
 
     try:
         payload = {}
-        headers = {}
-        response = requests.request("GET", url, headers=headers, data=payload)
-        json_objects = response.json()["response"]["docs"]
-        result = []
-        BFS(json_objects, result)
-        return result
+        headers = {
+            'Accept': 'application/json',
+            'Authorization': 'Basic c3ZjLWxpbXNkYkBqYXgub3JnOnZBJmNlMyhST3pBTA=='
+        }
+        response = requests.request("GET", url, headers=headers, data=payload).json()["response"]
+        status = 1 if response["numFound"] > 0 else 0
+        '''Data found'''
+        if status == 1:
+            json_objects = response.json()["docs"]
+            result = []
+            BFS(json_objects, result)
+            return result
+
+        else:
+            logger.info(f"No record found at {url}")
 
     except requests.exceptions.HTTPError as err1:
         error = str(err1.__dict__)
