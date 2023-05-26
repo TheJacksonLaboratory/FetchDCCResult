@@ -251,6 +251,8 @@ def main():
 
             conn = ebi_media.connect_to_db(username=db_user, password=db_password, server=db_server, database=db_name)
             cursor = conn.cursor()
+            cursor.execute("TRUNCATE TABLE KOMP.ebiimages;")
+            cursor.commit()
             cursor.execute("""SHOW COLUMNS FROM KOMP.ebiimages;""")
             queryResult = cursor.fetchall()[1:]
             columns = []

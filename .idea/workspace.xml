@@ -5,17 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b0f97f76-ce2a-4d7f-b9f6-81c0f9aaa130" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/scripts/ebi.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ebi.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/impc.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/impc.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/EBI/ebi_images.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/EBI/ebi_images.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EBI/ebi_procedure.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/EBI/ebi_procedure.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IMPC/dcc_files.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/IMPC/dcc_files.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IMPC/dcc_images.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/IMPC/dcc_images.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IMPC/dcc_procedures.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/IMPC/dcc_procedures.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,14 +45,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "ToolWindowRun.ShowToolbar": "false",
-    "settings.editor.selected.configurable": "preferences.editor.code.editing"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;ToolWindowRun.ShowToolbar&quot;: &quot;false&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor.code.editing&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/scripts" />

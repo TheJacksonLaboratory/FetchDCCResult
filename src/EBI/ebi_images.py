@@ -164,7 +164,7 @@ def insert_to_db(dataset: list[pd.DataFrame],
 
     df = pd.concat(temp)
 
-    df.drop("procedureKey", axis=1, inplace=True)
+    #df.drop("procedureKey", axis=1, inplace=True)
     currTime = [datetime.datetime.now() for i in range(len(df.index))]
     insertData = df.copy()
     insertData["modifiedTime"] = pd.Series(currTime).values
@@ -195,5 +195,5 @@ call_back = filter_image_by(colonyId="JR18609",
                             center="JAX",
                             rows=2 ** 31 - 1,
                             )
-print(call_back)
+print(call_back[0].columns)
 insert_to_db(dataset=call_back, username=db_user, password=db_password, server=db_server, database=db_name)
