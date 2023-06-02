@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b0f97f76-ce2a-4d7f-b9f6-81c0f9aaa130" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/IMPC.bat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EBI/ebi_images.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/EBI/ebi_images.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/ebi.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ebi.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/impc.sh" beforeDir="false" afterPath="$PROJECT_DIR$/impc.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +56,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/scripts" />
       <recent name="$PROJECT_DIR$/src/EBI" />
       <recent name="$PROJECT_DIR$/src" />
