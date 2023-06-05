@@ -11,6 +11,6 @@ RUN dir
 RUN pip install -r requirements.txt
 
 # Provide an entry point for the project
-ENTRYPOINT [ "sh", "./job.sh" ]
+ENTRYPOINT [ "sh", "./impc.sh" ]
 
-CMD ["job.sh"]
+CMD ["impc.sh"]
