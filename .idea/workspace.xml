@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="b0f97f76-ce2a-4d7f-b9f6-81c0f9aaa130" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IMPC.bat" beforeDir="false" afterPath="$PROJECT_DIR$/impc.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IMPC/dcc_files.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/IMPC/dcc_files.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IMPC/dcc_procedures.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/IMPC/dcc_procedures.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +73,7 @@
       </envs>
       <option name="SDK_HOME" value="/usr/local/bin/python3.11" />
       <option name="SDK_NAME" value="Python 3.11" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/EBI" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/IMPC" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -84,7 +87,7 @@
           <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
         </ENTRIES>
       </EXTENSION>
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/EBI/ebi_images.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/IMPC/dcc_files.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />

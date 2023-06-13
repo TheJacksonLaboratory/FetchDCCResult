@@ -109,7 +109,7 @@ def filter_line_procedure_by(columns: list[str],
         if status == 1:
             result = []
             for json_obj in response:
-                db_obj = {"colonyId": "JR36697"}
+                db_obj = {"colonyId": colonyId}
                 db_obj = DFS(json_object=json_obj, columns=columns, db_obj=db_obj)
                 logger.info(f"Result dict is {db_obj}")
                 result.append(db_obj)

@@ -12,19 +12,6 @@ import IMPC.dcc_images as media
 import EBI.ebi_images as ebi_media
 import EBI.ebi_procedure as ebi_procedure
 
-"""Setup logger"""
-
-logging_dest = os.path.join(os.getcwd(), "logs")
-
-logger = logging.getLogger(__name__)
-FORMAT = "[%(asctime)s->%(filename)s->%(funcName)s():%(lineno)s]%(levelname)s: %(message)s"
-logging.basicConfig(format=FORMAT, filemode="w", level=logging.DEBUG, force=True)
-date = datetime.date.today().strftime("%B-%d-%Y")
-logging_filename = logging_dest + "/" + f'{date}.log'
-handler = RotatingFileHandler(logging_filename, maxBytes=10000000000, backupCount=10)
-handler.setFormatter(logging.Formatter(FORMAT))
-logger.addHandler(handler)
-
 
 # Fetch and write to stdout, some mouse and phenotype info for a given CBA request eg. CBA36
 #
@@ -217,24 +204,31 @@ def main():
         if sys.argv[2] == "-xml":
 
             conn = dcc_files.connect_to_db(username=db_user, password=db_password, server=db_server, database=db_name)
-            cursor = conn.cursor(buffered=True, dictionary=True)
-            cursor.execute("SELECT DISTINCT * FROM KOMP.submittedprocedures;")
-            rows = cursor.fetchall()
+            cursor = conn.cursor(buffered=True)
+            cursor.execute("SELECT DISTINCT XmlFilename FROM KOMP.submittedprocedures;")
+            rows = set(cursor.fetchall())
 
             '''GET COLUMN NAMES'''
 
-            cursor.execute("SELECT * FROM dccXmlFileStatus;")
-            fileStatusColNames = list(cursor.fetchall()[0].keys())[1:]
-
-            cursor.execute("TRUNCATE TABLE dccXmlFileStatus;")
+            cursor.execute("SHOW COLUMNS FROM KOMP.dccXmlFileStatus;")
+            queryResult = cursor.fetchall()
+            print(queryResult)
+            fileStatusColNames = []
+            for item in queryResult[1:]:
+                fileStatusColNames.append(item[0])
+            cursor.execute("TRUNCATE TABLE KOMP.dccXmlFileStatus;")
+            cursor.execute("TRUNCATE TABLE KOMP.xmlfilelogmessage;")
             conn.close()
 
             for row in rows:
-                xmlFileName = row["XmlFilename"]
+                print(row)
+                xmlFileName = row[0]
                 db_obj = dcc_files.filter_xml_by(fileName=xmlFileName, columns=fileStatusColNames)
-                print(db_obj)
                 logger.debug(f"Insert record for file: {xmlFileName} to table")
-                dcc_files.insert_to_db(db_object=db_obj, username=db_user, password=db_password, server=db_server,
+                dcc_files.insert_to_db(db_object=db_obj,
+                                       username=db_user,
+                                       password=db_password,
+                                       server=db_server,
                                        database=db_name)
 
             logger.info("Done")
@@ -349,4 +343,13 @@ def main():
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
+    # logger = logging.getLogger("__main__")
+
+    job_name = 'download_from_omero'
+    logging_dest = os.path.join(utils.get_project_root(), "logs")
+    date = datetime.datetime.now().strftime("%B-%d-%Y")
+    logging_filename = logging_dest + "/" + f'{date}.log'
+    logger = utils.createLogHandler(job_name, logging_filename)
+    logger.info('Logger has been created')
+
     main()

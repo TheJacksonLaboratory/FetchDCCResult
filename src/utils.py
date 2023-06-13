@@ -1,3 +1,10 @@
+import logging
+import os
+from datetime import datetime
+from logging.handlers import RotatingFileHandler
+from pathlib import Path
+
+
 db_server = "rslims.jax.org"
 db_user = "dba"
 db_password = "rsdba"
@@ -51,3 +58,23 @@ stmt_for_colonyId = """SELECT DISTINCT
 
 stmt_for_animalId = "SELECT OrganismID FROM Organism INNER JOIN OrganismStudy USING (_Organism_key) WHERE _Study_key " \
                     "IN (27, 28, 57);"
+
+"""Function to get work directory"""
+
+
+def get_project_root() -> Path:
+    return Path(__file__).parent.parent
+
+
+"""Setup logger"""
+
+
+def createLogHandler(job_name, log_file):
+    logger = logging.getLogger(__name__)
+    FORMAT = "[%(asctime)s->%(filename)s->%(funcName)s():%(lineno)s]%(levelname)s: %(message)s"
+    logging.basicConfig(format=FORMAT, filemode="w", level=logging.DEBUG, force=True)
+    handler = logging.FileHandler(log_file)
+    handler.setFormatter(logging.Formatter(FORMAT))
+    logger.addHandler(handler)
+
+    return logger

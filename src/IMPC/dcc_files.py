@@ -36,7 +36,7 @@ def filter_xml_by(fileName: str,
 
     try:
         response = requests.get(url).json()
-        status = 1 if response["total"] > 0 else 0
+        status = 1 if len(response) > 0 else 0
         '''Data found'''
         if status == 1:
             db_obj = {}
@@ -51,9 +51,9 @@ def filter_xml_by(fileName: str,
                     if is_substring_of(keyName=key, columns=columns):
                         logger.debug(f"Adding {key} to database record")
                         db_obj[key] = val
-                    db_obj["logs"] = json_obj["logs"]
-                    db_obj["lastUpdatedDate"] = json_obj["lastUpatedDate"]
-                    db_obj["xmlId"] = json_obj["filename"].split(".")[2]
+                db_obj["logs"] = json_obj["logs"]
+                db_obj["lastUpdatedDate"] = json_obj["lastUpatedDate"]
+                db_obj["xmlId"] = json_obj["filename"].split(".")[2]
 
             return db_obj
 
@@ -147,3 +147,4 @@ def insert_to_db(db_object: dict,
 
     conn.close()
     logger.info("All insertions has been done, db connection closed.")
+
