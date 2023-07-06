@@ -13,11 +13,17 @@ from sqlalchemy.exc import SQLAlchemyError
 
 logger = logging.getLogger("__main__")
 
-nameMap = {"parameter_stable_id": "ImpcCode", "date_of_birth": "DOB",
-           "external_sample_id": "AnimalID", "allele_symbol": "Symbol",
-           "download_url": "DownLoadFilePath", "jpeg_url": "JPEG",
-           "experiment_source_id": "ExperimentName",
-           "colony_id": "JR", "sex": "Sex"}
+nameMap = {
+            "parameter_stable_id": "ImpcCode",
+            "date_of_birth": "DOB",
+            "external_sample_id": "AnimalID",
+            "allele_symbol": "Symbol",
+            "download_url": "DownLoadFilePath",
+            "jpeg_url": "JPEG",
+            "experiment_source_id": "ExperimentName",
+            "colony_id": "JR",
+            "sex": "Sex"
+            }
 
 ReturnType = "parameter_stable_id, parameter_stable_id, date_of_birth, external_sample_id, allele_symbol" \
              "download_url, jpeg_url, experiment_source_id, colony_id, sex"
@@ -164,7 +170,7 @@ def insert_to_db(dataset: list[pd.DataFrame],
 
     df = pd.concat(temp)
 
-    #df.drop("procedureKey", axis=1, inplace=True)
+    # df.drop("procedureKey", axis=1, inplace=True)
     currTime = [datetime.datetime.now() for i in range(len(df.index))]
     insertData = df.copy()
     insertData["modifiedTime"] = pd.Series(currTime).values
@@ -185,6 +191,7 @@ def insert_to_db(dataset: list[pd.DataFrame],
         logger.error("Error message: {error}".format(error=error))
 
 
+"""
 db_server = "rslims.jax.org"
 db_user = "dba"
 db_password = "rsdba"
@@ -197,3 +204,4 @@ call_back = filter_image_by(colonyId="JR18609",
                             )
 print(call_back[0].columns)
 insert_to_db(dataset=call_back, username=db_user, password=db_password, server=db_server, database=db_name)
+"""

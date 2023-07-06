@@ -258,7 +258,7 @@ def filer_specimen_by(animalId: Optional[str],
 
     try:
         response = requests.get(url).json()
-        status = 1 if response["total"] > 0 else 0
+        status = 1 if len(response) > 0 else 0
         '''Data found'''
         if status == 1:
             for json_obj in response:

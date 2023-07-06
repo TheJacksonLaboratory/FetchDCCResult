@@ -10,10 +10,17 @@ import requests
 
 logger = logging.getLogger("__main__")
 
-nameMap = {"gene_symbol": "GeneSymbol", "date_of_experiment": "date_of_experiment",
-           "experiment_source_id": "experiment_name", "external_sample_id": "organism_name",
-           "sex": "sex", "weight_days_old": "age", "zygosity": "zygosity", "colony_id": "JRNumber",
-           "life_stage_name": "study", "procedure_stable_id": "IMPC_CODE"}
+nameMap = {"gene_symbol": "GeneSymbol",
+           "date_of_experiment": "date_of_experiment",
+           "experiment_source_id": "experiment_name",
+           "external_sample_id": "organism_name",
+           "sex": "sex",
+           "weight_days_old": "age",
+           "zygosity": "zygosity",
+           "colony_id": "JRNumber",
+           "life_stage_name": "study",
+           "procedure_stable_id": "IMPC_CODE"}
+
 ReturnType = "date_of_experiment,experiment_source_id,external_sample_id,sex,gene_symbol,weight_days_old," \
              "zygosity,colony_id,life_stage_name,procedure_stable_id"
 
@@ -76,7 +83,6 @@ def filer_procedure_by(columns: list[str],
                        parameter_stable_id: Optional[str] = None,
                        data_point: Optional[str] = None,
                        rows: Optional[int] = 0) -> list[dict]:
-
     if not columns:
         logger.error("No column headers")
         return []
@@ -144,7 +150,7 @@ def filer_procedure_by(columns: list[str],
         status = 1 if response["numFound"] > 0 else 0
         '''Data found'''
         if status == 1:
-            json_objects = response.json()["docs"]
+            json_objects = response["docs"]
             result = []
             BFS(json_objects, result)
             return result
@@ -217,7 +223,6 @@ def insert_to_db(dataset: list[dict],
     conn.close()
     logger.info("All insertions has been done, db connection closed.")
 
-
 '''
 db_server = "rslims.jax.org"
 db_user = "dba"
@@ -232,7 +237,7 @@ columns = []
 for item in queryResult:
     columns.append(item[0])
 
-result = filer_procedure_by(columns=columns, colony_id="JR18553", procedure_stable_id="IMPC_ABR_002", rows = 2000)
+result = filer_procedure_by(columns=columns, colony_id="JR18553", procedure_stable_id="IMPC_ABR_002", rows=2000)
 print(result)
 insert_to_db(dataset=result, username=db_user, password=db_password, server=db_server, database=db_name)
 '''

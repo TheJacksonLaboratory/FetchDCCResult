@@ -257,7 +257,7 @@ def insert_to_db(dataset: list[dict],
 
         insertData.columns = keys
         print(insertData)
-        insertData.to_sql("dccimages", engine, schema="komp", if_exists='append', index=False, chunksize=1000)
+        insertData.to_sql("dccimages", engine, schema="komp", if_exists='replace', index=False, chunksize=1000)
         rows = engine.connect().execute(db.text("SELECT COUNT(*) FROM komp.dccImages;")).scalar()
         logger.debug(f"Number of rows in table is {rows}")
 

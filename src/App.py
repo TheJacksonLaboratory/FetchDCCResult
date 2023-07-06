@@ -12,6 +12,24 @@ import IMPC.dcc_images as media
 import EBI.ebi_images as ebi_media
 import EBI.ebi_procedure as ebi_procedure
 
+"""Setup logger"""
+
+logger = logging.getLogger(__name__)
+FORMAT = "[%(asctime)s->%(filename)s->%(funcName)s():%(lineno)s]%(levelname)s: %(message)s"
+logging.basicConfig(format=FORMAT, filemode="w", level=logging.DEBUG, force=True)
+logging_dest = os.path.join(utils.get_project_root(), "logs")
+date = datetime.date.today().strftime("%B-%d-%Y")
+logging_filename = logging_dest + "/" + f'{date}.log'
+handler = RotatingFileHandler(logging_filename, maxBytes=10000000000, backupCount=10)
+handler.setFormatter(logging.Formatter(FORMAT))
+logger.addHandler(handler)
+
+try:
+    os.mkdir(logging_dest)
+
+except OSError as e:
+    print(e)
+
 
 # Fetch and write to stdout, some mouse and phenotype info for a given CBA request eg. CBA36
 #
@@ -127,8 +145,7 @@ def main():
                 animalId = item[0]
                 logger.info(f"Fetching record for {animalId}")
                 result = procedures.filter_experiment_procedure_by(animalId=animalId,
-                                                                   showDetails=True,
-                                                                   status="active")
+                                                                   showDetails=True)
                 logger.debug(f"Getting number of {len(result)} records back")
 
                 logger.info(f"Start to insert records for animal id: {animalId}")
@@ -252,6 +269,7 @@ def main():
             columns = []
             for item in queryResult:
                 columns.append(item[0])
+            cursor.execute("TRUNCATE TABLE KOMP.ebiimages;")
             conn.close()
 
             stmt = utils.stmt_for_colonyId
@@ -298,6 +316,8 @@ def main():
             columns = []
             for item in queryResult:
                 columns.append(item[0])
+
+            cursor.execute("TRUNCATE TABLE KOMP.ebi_procedures;")
             conn.close()
 
             # Statement to select
@@ -344,12 +364,5 @@ def main():
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     # logger = logging.getLogger("__main__")
-
-    job_name = 'download_from_omero'
-    logging_dest = os.path.join(utils.get_project_root(), "logs")
-    date = datetime.datetime.now().strftime("%B-%d-%Y")
-    logging_filename = logging_dest + "/" + f'{date}.log'
-    logger = utils.createLogHandler(job_name, logging_filename)
-    logger.info('Logger has been created')
 
     main()
