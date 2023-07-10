@@ -284,18 +284,18 @@ def main():
             conn_to_dev.close()
             logger.info("Connection to development database closed")
 
-            for parameterKey in parameterKeys:
+            for procedure_code in utils.procedure_code:
                 for pair in colonyIds:
                     colonyId = pair[0]
-                    logger.debug(f"Fetching result for JR number: {colonyId}, IMPC CODE: {parameterKey} ")
+                    logger.debug(f"Fetching result for JR number: {colonyId}, IMPC CODE: {procedure_code} ")
                     result = ebi_media.filter_image_by(colonyId=colonyId,
-                                                       parameter_stable_id=parameterKey,
+                                                       parameter_stable_id=procedure_code,
                                                        center="JAX",
                                                        indent=True,
                                                        rows=2 ** 31 - 1)
                     logger.info(f"Getting number of {len(result)} result back")
 
-                    logger.info(f"Insert records for JR number: {colonyId}, IMPC code: {parameterKey}")
+                    logger.info(f"Insert records for JR number: {colonyId}, IMPC code: {procedure_code}")
                     ebi_media.insert_to_db(dataset=result,
                                            username=db_user,
                                            password=db_password,
@@ -333,17 +333,17 @@ def main():
             conn_to_dev.close()
             logger.info("Connection to development database closed")
 
-            for parameterKey in parameterKeys:
+            for procedure_code in utils.procedure_code:
                 for pair in colonyIds:
                     colonyId = pair[0]
-                    logger.debug(f"Fetching result for JR number: {colonyId}, IMPC CODE: {parameterKey} ")
+                    logger.debug(f"Fetching result for JR number: {colonyId}, IMPC CODE: {procedure_code} ")
                     result = ebi_procedure.filer_procedure_by(columns=columns,
                                                               colony_id=colonyId,
-                                                              procedure_stable_id=parameterKey,
+                                                              procedure_stable_id=procedure_code,
                                                               rows=2 ** 31 - 1)
                     logger.info(f"Getting number of {len(result)} result back")
 
-                    logger.info(f"Insert records for JR number: {colonyId}, IMPC code: {parameterKey}")
+                    logger.info(f"Insert records for JR number: {colonyId}, IMPC code: {procedure_code}")
                     ebi_procedure.insert_to_db(dataset=result,
                                                username=db_user,
                                                password=db_password,

@@ -4,7 +4,6 @@ from datetime import datetime
 from logging.handlers import RotatingFileHandler
 from pathlib import Path
 
-
 db_server = "rslims.jax.org"
 db_user = "dba"
 db_password = "rsdba"
@@ -42,6 +41,65 @@ parameterKeys = ["IMPC_XRY_034_001",
                  "JAX_ERG_028_001",
                  "IMPC_WEL_003_001",
                  "IMPC_PAT_057_002"]
+
+procedure_code = ['IMPC_ABR_002',
+                  'IMPC_ACS_003',
+                  'IMPC_ALZ_001',
+                  'IMPC_BLK_001',
+                  'IMPC_BWT_001',
+                  'IMPC_CBC_003',
+                  'IMPC_CSD_002',
+                  'IMPC_CSD_003',
+                  'IMPC_DXA_001',
+                  'IMPC_ECG_001',
+                  'IMPC_ECG_002',
+                  'IMPC_ELZ_001',
+                  'IMPC_EMA_002',
+                  'IMPC_EMO_001',
+                  'IMPC_EOL_001',
+                  'IMPC_EVL_001',
+                  'IMPC_EVM_001',
+                  'IMPC_EVO_001',
+                  'IMPC_EVP_001',
+                  'IMPC_EYE_001',
+                  'IMPC_FER_001',
+                  'IMPC_GEL_002',
+                  'IMPC_GEL_003',
+                  'IMPC_GEM_002',
+                  'IMPC_GEM_003',
+                  'IMPC_GEO_002',
+                  'IMPC_GEO_003',
+                  'IMPC_GEP_002',
+                  'IMPC_GEP_003',
+                  'IMPC_GPL_001',
+                  'IMPC_GPM_001',
+                  'IMPC_GPO_001',
+                  'IMPC_GPP_001',
+                  'IMPC_GRS_001',
+                  'IMPC_HEM_002',
+                  'IMPC_HIS_001',
+                  'IMPC_HWT_001',
+                  'IMPC_IMM_001',
+                  'IMPC_INS_003',
+                  'IMPC_IPG_001',
+                  'IMPC_PAT_002',
+                  'IMPC_VIA_002',
+                  'IMPC_WEL_001',
+                  'IMPC_XRY_001',
+                  'IMPC_YMZ_001',
+                  'JAXIP_BWT_001',
+                  'JAXIP_WEL_001',
+                  'JAX_BLK_001',
+                  'JAX_ECT_001',
+                  'JAX_ERG_003',
+                  'JAX_HBD_001',
+                  'JAX_LDT_001',
+                  'JAX_OFD_001',
+                  'JAX_PLC_001',
+                  'JAX_ROT_001',
+                  'JAX_SLW_001',
+                  'JAX_TLS_001',
+                  'JAX_URI_001']
 
 stmt_for_colonyId = """SELECT DISTINCT
                         CONCAT('JR', RIGHT(StockNumber, 5)) AS ColonyID
