@@ -11,25 +11,34 @@ This project is intend to monitor the staus of files and data that are submitted
 
 If your README is long, add a table of contents to make it easy for users to find what they need.
 
+- [Prerequisite](#Prerequisite)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Credits](#credits)
+
+
+<br>
+
+
+## Prerequisite
+- Python 3.x 
+- Git
+- pip3
 
 <br>
 
 ## Installation
 
-First, `cd` to your work directory, then creates a virtual environment in `Python 3.9+`, if you are like me using  `venv`, use the following command:
+First, open your `terminal/command prompt` and `cd` to your work directory, then create a virtual environment in `Python 3.8+`. Use the following command if you like to use `venv` just like me:
 
 ```
  python3 -m venv .env/venv_name
 ```
-. Or you can use `conda` or `pyenv`, totally up to you. Next, activate your virtual environment use the following command:
+. You can also use `conda` or `pyenv`, whatever you like. Next, activate your virtual environment use the following command:
 
 ```
 . .env/venv_name/bin/activate
 ```
-. In your work directory, use the following command to download the repository:
+. In your work directory, run the following command to download the repository:
 
 ```
 git clone https://github.com/TheJacksonLaboratory/FetchDCCResult.git
@@ -47,18 +56,17 @@ pip install -r requirements.txt
 Using application is quite straightfoward, but before you use it, please make sure that you have enviormrnt setup for `bash/shell`. If you are on a Mac/Linux machine like me, you are fine. If you are on a windows machine, please use this link to have your enviroment setup. After everything is configured, run the following commands on your terminal:
 
     ```
-    chmod +x /path/to/your/directory/jobs.sh
-    /path/to/your/directory/jobs.sh
+    chmod +x /path/to/your/directory/impc.sh
+    ./path/to/your/directory/impc.sh
     ```
-`jobs.sh` will execute all tasks for you. 
+`impc.sh` will execute all tasks for you. If you are on a windows machine, open your command prompt and run the following command:
+
+    ```
+    /path/to/your/directory/impc.bat
+    ```
 
 <br>
 
-## Credits
+Replace name of Bash\Batchfile script from "impc" to "ebi" if you would like to get feedback of submitted procedures from EBI. Currently, this app is scheduled to run weekly on `bhwin0236.jax.org`. 
 
-List your collaborators, if any, with links to their GitHub profiles.
-
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
 
