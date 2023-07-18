@@ -8,7 +8,7 @@ logger = logging.getLogger("__main__")
 def connect_to_db(username: str,
                   password: str,
                   server: str,
-                  database: str) -> mysql.connector.connection:
+                  database: str):
     """
     Function to build connection to backend database
     :return: mysql.connector.connection

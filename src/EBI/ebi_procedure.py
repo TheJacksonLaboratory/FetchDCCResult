@@ -8,6 +8,10 @@ from urllib.parse import urlencode, urlunsplit
 import mysql.connector
 import requests
 
+"""
+Take a look at https://www.ebi.ac.uk/mi/impc/solr/experiment/select?q=procedure_stable_id:IMPC_HWT_001%20AND%20colony_id:JR23283&fl=date_of_experiment,experiment_source_id,external_sample_id,sex,gene_symbol,weight_days_old,zygosity,colony_id,life_stage_name,procedure_stable_id&rows=2147483647
+"""
+
 logger = logging.getLogger("__main__")
 
 nameMap = {"gene_symbol": "GeneSymbol",

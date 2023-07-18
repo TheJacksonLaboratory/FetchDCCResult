@@ -3,7 +3,7 @@ import utils
 import os
 import logging
 from logging.handlers import RotatingFileHandler
-import datetime
+from datetime import datetime
 import mysql.connector
 
 import IMPC.dcc_procedures as procedures
@@ -11,7 +11,7 @@ import IMPC.dcc_files as dcc_files
 import IMPC.dcc_images as media
 import EBI.ebi_images as ebi_media
 import EBI.ebi_procedure as ebi_procedure
-
+'''
 """Setup logger"""
 
 logger = logging.getLogger(__name__)
@@ -29,7 +29,7 @@ try:
 
 except OSError as e:
     print(e)
-
+'''
 
 # Fetch and write to stdout, some mouse and phenotype info for a given CBA request eg. CBA36
 #
@@ -311,13 +311,14 @@ def main():
         if sys.argv[2] == "-p":
             conn = ebi_procedure.connect_to_db(user=db_user, password=db_password, server=db_server, database=db_name)
             cursor = conn.cursor()
-            cursor.execute("""SHOW COLUMNS FROM KOMP.ebi_procedures;""")
+            cursor.execute("""TRUNCATE TABLE KOMP.ebi_procedures;""")
             queryResult = cursor.fetchall()[1:]
             columns = []
             for item in queryResult:
                 columns.append(item[0])
 
             cursor.execute("TRUNCATE TABLE KOMP.ebi_procedures;")
+            conn.commit()
             conn.close()
 
             # Statement to select
@@ -363,6 +364,12 @@ def main():
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    # logger = logging.getLogger("__main__")
+
+    job_name = 'Fetch submitted procedure'
+    logging_dest = os.path.join(utils.get_project_root(), "logs")
+    date = datetime.now().strftime("%B-%d-%Y")
+    logging_filename = logging_dest + "/" + f'{date}.log'
+    logger = utils.createLogHandler(job_name, logging_filename)
+    logger.info('Logger has been created')
 
     main()
