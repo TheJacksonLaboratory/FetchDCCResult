@@ -233,21 +233,26 @@ def main():
             fileStatusColNames = []
             for item in queryResult[1:]:
                 fileStatusColNames.append(item[0])
+                
             cursor.execute("TRUNCATE TABLE KOMP.dccXmlFileStatus;")
             cursor.execute("TRUNCATE TABLE KOMP.xmlfilelogmessage;")
+            cursor.execute("TRUNCATE TABLE KOMP.dccxmlprocedureissues;")
             conn.close()
-
-            for row in rows:
-                print(row)
-                xmlFileName = row[0]
-                db_obj = dcc_files.filter_xml_by(fileName=xmlFileName, columns=fileStatusColNames)
-                logger.debug(f"Insert record for file: {xmlFileName} to table")
+            
+            if len(sys.argv) < 4:
+                days_to_search_back = 60 # two months
+            else:
+                days_to_search_back = int(sys.argv[3])
+                
+            db_obj_ls = dcc_files.get_xmls_with_issues(columns=fileStatusColNames,days_to_search_back=days_to_search_back)
+            
+            for db_obj in db_obj_ls:
                 dcc_files.insert_to_db(db_object=db_obj,
                                        username=db_user,
                                        password=db_password,
                                        server=db_server,
                                        database=db_name)
-
+			
             logger.info("Done")
             print()
             print("\n-----------------------------------------------------")
